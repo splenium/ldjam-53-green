@@ -7,10 +7,14 @@ public partial class Player : CharacterBody2D
 	private float moveSpeed = 200f;
 	[Export]
 	private float gravity = 500f;
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+
+    private GameManager GameManager { get; set; }
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
-	}
+        GameManager = GetNode<GameManager>("/root/GameManager");
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)

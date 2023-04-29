@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckm51mfbyqv14"
+path="res://.godot/imported/Cinematic Documentary Romantic by Infraction.mp3-0ad9c09b8ac1898e523b8247c59e6d97.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3"
+dest_files=["res://.godot/imported/Cinematic Documentary Romantic by Infraction.mp3-0ad9c09b8ac1898e523b8247c59e6d97.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
