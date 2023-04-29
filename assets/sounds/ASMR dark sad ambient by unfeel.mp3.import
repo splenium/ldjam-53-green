@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6al7bagtyw1d"
+path="res://.godot/imported/ASMR dark sad ambient by unfeel.mp3-a7af2df4e566cd187c0c9bdc4883399a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/ASMR dark sad ambient by unfeel.mp3"
+dest_files=["res://.godot/imported/ASMR dark sad ambient by unfeel.mp3-a7af2df4e566cd187c0c9bdc4883399a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
