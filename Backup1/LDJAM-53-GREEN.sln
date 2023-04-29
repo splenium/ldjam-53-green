@@ -1,15 +1,12 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
-MinimumVisualStudioVersion = 10.0.40219.1
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ldjam-53-green", "Ldjam-53-green.csproj", "{3E50F83E-4BFA-4009-B0C7-4DAF59384A5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		ExportDebug|Any CPU = ExportDebug|Any CPU
-		ExportRelease|Any CPU = ExportRelease|Any CPU
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3E50F83E-4BFA-4009-B0C7-4DAF59384A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -18,11 +15,5 @@ Global
 		{3E50F83E-4BFA-4009-B0C7-4DAF59384A5C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{3E50F83E-4BFA-4009-B0C7-4DAF59384A5C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{3E50F83E-4BFA-4009-B0C7-4DAF59384A5C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95203AC6-77EA-4EA2-9F02-EC729B62132D}
 	EndGlobalSection
 EndGlobal
