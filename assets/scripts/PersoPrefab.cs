@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PersoPrefab : Node2D
+public partial class PersoPrefab : CharacterBody2D
 {
 	private float moveSpeed = 200f;
 	[Export]

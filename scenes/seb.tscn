@@ -1,23 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqajmd2vjete1"]
+[gd_scene load_steps=2 format=3 uid="uid://cqajmd2vjete1"]
 
-[ext_resource type="Script" path="res://assets/scripts/PersoPrefab.cs" id="1_ie60c"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/PersoPrefab.tscn" id="2_5air3"]
+[ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t206n"]
-
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("CharacterBody", "AnimatedSprite")]
+[node name="Node2D" type="Node2D"]
 position = Vector2(436, 370)
 scale = Vector2(10, 10)
-script = ExtResource("1_ie60c")
-CharacterBody = NodePath("CharacterBody2D")
-AnimatedSprite = NodePath("CharacterBody2D/AnimatedSprite2D")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" parent="CharacterBody2D" instance=ExtResource("2_5air3")]
-position = Vector2(0, 0)
-scale = Vector2(1, 1)
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_t206n")
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ijweu")]
