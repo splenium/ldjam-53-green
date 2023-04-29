@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c67hx6pf8mamv"]
+
+[ext_resource type="PackedScene" uid="uid://bopewonqkwc3n" path="res://assets/prefabs/spaceship.tscn" id="1_5li5o"]
+[ext_resource type="Texture2D" uid="uid://dl0gujr7mpte3" path="res://assets/sprites/blue.png" id="2_gghpm"]
+[ext_resource type="PackedScene" uid="uid://qeteovi856de" path="res://scenes/asteroid.tscn" id="3_wmhrm"]
+
+[node name="World" type="Node2D"]
+
+[node name="Spaceship" parent="." instance=ExtResource("1_5li5o")]
+position = Vector2(563, 326)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 4
+offset_right = 1153.0
+offset_bottom = 652.0
+texture = ExtResource("2_gghpm")
+
+[node name="Asteroid" parent="." instance=ExtResource("3_wmhrm")]
+position = Vector2(372, 433)
