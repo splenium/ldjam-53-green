@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dno5iqs6m0odd"]
+[gd_scene load_steps=8 format=3 uid="uid://dno5iqs6m0odd"]
 
 [ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="1_3o75k"]
 [ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="1_orhi2"]
+[ext_resource type="Material" uid="uid://da1gv3vvnk3pt" path="res://assets/scripts/shaders/IconMat.tres" id="2_8wvdv"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_4ibyu"]
+[ext_resource type="Script" path="res://assets/scripts/SetMenuMask.cs" id="4_01cn8"]
+[ext_resource type="Texture2D" uid="uid://bkocad8x44cbd" path="res://assets/UI/IconMask.png" id="5_cbw8y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ym3xy"]
 font = ExtResource("3_4ibyu")
@@ -45,7 +48,17 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+texture_filter = 1
+material = ExtResource("2_8wvdv")
+layout_mode = 2
+texture = ExtResource("1_orhi2")
+stretch_mode = 5
+script = ExtResource("4_01cn8")
+MaskTexture = ExtResource("5_cbw8y")
+
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("1_orhi2")
