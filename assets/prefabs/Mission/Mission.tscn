@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl2qylnad02qo"]
+
+[ext_resource type="Script" path="res://assets/prefabs/Mission/Mission.cs" id="1_td2bv"]
+[ext_resource type="Texture2D" uid="uid://de1kfcq38gdha" path="res://assets/sprites/SimpleBorder.png" id="2_6b2wr"]
+[ext_resource type="Texture2D" uid="uid://d0gqwukc3sdvn" path="res://assets/sprites/Key.png" id="3_nif7i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j4dfw"]
+font_color = Color(0.164706, 0.0117647, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxcj8"]
+font_color = Color(0.0156863, 0.85098, 0, 1)
+
+[node name="Mission" type="MarginContainer" node_paths=PackedStringArray("labelMission", "labelCash", "key")]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_td2bv")
+labelMission = NodePath("MarginContainer2/HBoxContainer/MarginContainer/MissionLabel")
+labelCash = NodePath("MarginContainer2/HBoxContainer/MarginContainer3/Label")
+key = NodePath("MarginContainer2/HBoxContainer/MarginContainer2/MarginContainer/KeyLabel")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6b2wr")
+region_rect = Rect2(-0.134493, -0.356722, 47.8947, 48.5029)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("3_nif7i")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="KeyLabel" type="Label" parent="MarginContainer2/HBoxContainer/MarginContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "K"
+label_settings = SubResource("LabelSettings_j4dfw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="MissionLabel" type="Label" parent="MarginContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Label de mission"
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "5$"
+label_settings = SubResource("LabelSettings_gxcj8")
+horizontal_alignment = 2
+vertical_alignment = 1
