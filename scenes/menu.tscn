@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://dno5iqs6m0odd"]
+
+[ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="1_3o75k"]
+[ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="1_orhi2"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_4ibyu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym3xy"]
+font = ExtResource("3_4ibyu")
+font_size = 40
+font_color = Color(1, 0.745098, 0, 1)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3o75k")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_orhi2")
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="TickDeliver" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = ">"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="Deliver" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "deliver"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="TickExpeditors" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="Expeditors" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "expeditors"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
