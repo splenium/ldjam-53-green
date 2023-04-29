@@ -24,7 +24,7 @@ public partial class Asteroid : Area2D
             case AsteroidSize.Large:
                 speed = GD.RandRange(50, 100);
                 _sprite.Texture = GD.Load("res://assets/sprites/space/meteors/meteorBrown_big1.png") as Texture2D;
-                _collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_big.tres") as Shape2D;
+                //_collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_big.tres") as Shape2D;
                 break;
             case AsteroidSize.Medium:
                 speed = GD.RandRange(100, 150);
