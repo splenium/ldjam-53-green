@@ -12,6 +12,7 @@ public partial class Asteroid : Area2D
 
     private Sprite2D _sprite;
     private CollisionShape2D _collisionShape;
+
     public override void _Ready()
     {
         _sprite = GetNode<Sprite2D>("Sprite2D");
@@ -38,16 +39,21 @@ public partial class Asteroid : Area2D
         }
     }
 
+    public void Explode()
+    {
+        GD.Print("Sortie de l'ecrans... destruction de l'objet!");
+        QueueFree();
+    }
     public override void _PhysicsProcess(double delta)
     {
         GlobalPosition += movementVector.Rotated(Rotation) * speed * (float)delta;
 
         var screenSize = GetViewportRect().Size;
-        if (Position.Y < 0 || Position.Y > screenSize.Y 
-            && Position.X < 0 || Position.X > screenSize.X )
-        {
-            GD.Print("Sortie de l'ecrans... destruction de l'objet!");
-            QueueFree();
-        }
+        // var circleShape2D = (CircleShape2D)_collisionShape.Shape;
+        //if (Position.Y + circleShape2D.Radius < 0 || Position.Y - circleShape2D.Radius > screenSize.Y 
+        //    || Position.X + circleShape2D.Radius < 0 || Position.X - circleShape2D.Radius > screenSize.X )
+        //{
+        //    Explode();
+        //}
     }
 }
