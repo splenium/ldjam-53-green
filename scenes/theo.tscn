@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4bs31rl1hhe"]
+
+[ext_resource type="Script" path="res://assets/scripts/GameManager.cs" id="1_4y4p7"]
+[ext_resource type="PackedScene" uid="uid://bf6npctpqtoaf" path="res://assets/prefabs/Player.tscn" id="2_gcc7h"]
+[ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="3_h0ug8"]
+[ext_resource type="PackedScene" uid="uid://biuu8ifyc6rn" path="res://assets/prefabs/Box.tscn" id="4_hkfty"]
+
+[node name="Theo" type="Node2D"]
+script = ExtResource("1_4y4p7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 320)
+
+[node name="Player" parent="." instance=ExtResource("2_gcc7h")]
+position = Vector2(387, 374)
+
+[node name="Ground" parent="." instance=ExtResource("3_h0ug8")]
+
+[node name="Box" parent="." instance=ExtResource("4_hkfty")]
