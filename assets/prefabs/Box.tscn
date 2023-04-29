@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://drcvavequkx5s"]
 
 [ext_resource type="Script" path="res://assets/scripts/Box.cs" id="1_ddd5g"]
-[ext_resource type="Texture2D" uid="uid://b8xmfw2i5ejx8" path="res://assets/sprites/colis.png" id="2_ryob3"]
+[ext_resource type="Texture2D" uid="uid://c43amj08nl377" path="res://assets/sprites/Crate.png" id="2_vmhxc"]
 [ext_resource type="PackedScene" uid="uid://bl2qylnad02qo" path="res://assets/prefabs/Mission/Mission.tscn" id="3_rpgq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r3ij"]
 radius = 83.006
 
 [node name="Box" type="Area2D" node_paths=PackedStringArray("MissionSelection")]
+texture_filter = 1
 position = Vector2(859, 585)
 script = ExtResource("1_ddd5g")
 MissionSelection = NodePath("MissionList")
@@ -16,13 +17,14 @@ MissionSelection = NodePath("MissionList")
 shape = SubResource("CircleShape2D_3r3ij")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ryob3")
+scale = Vector2(3.31818, 3.31818)
+texture = ExtResource("2_vmhxc")
 
 [node name="MissionList" type="VBoxContainer" parent="."]
-offset_left = -221.0
-offset_top = -133.0
-offset_right = 251.0
-offset_bottom = -48.0
+offset_left = -223.0
+offset_top = -201.0
+offset_right = 249.0
+offset_bottom = -116.0
 
 [node name="MarginContainer" parent="MissionList" instance=ExtResource("3_rpgq3")]
 layout_mode = 2

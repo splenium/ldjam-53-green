@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqajmd2vjete1"]
 
-[ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
+[ext_resource type="PackedScene" uid="uid://mm3lhyb8f6m2" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(436, 370)

@@ -38,6 +38,10 @@ public partial class PersoPrefab : CharacterBody2D
 		else
 			AnimatedSprite.Play("Idle");
 
+		move.Y = 500f;
+
+
+
 		CharacterBody.Velocity = move;
 		CharacterBody.MoveAndSlide();
 	}

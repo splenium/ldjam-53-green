@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp4lgex5gobjt"]
+[gd_scene load_steps=6 format=3 uid="uid://mm3lhyb8f6m2"]
 
 [ext_resource type="Script" path="res://assets/scripts/PersoPrefab.cs" id="1_mnuvm"]
 [ext_resource type="SpriteFrames" uid="uid://bbwtd86ajjhfl" path="res://assets/sprites/PersoAnim.tres" id="1_phqpx"]
 [ext_resource type="Texture2D" uid="uid://b712q0x2mbroy" path="res://assets/sprites/Drone.png" id="2_4rrvo"]
 [ext_resource type="Script" path="res://assets/scripts/AnimateDrone.cs" id="3_mv5qe"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t206n"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dih8h"]
+radius = 8.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("CharacterBody", "AnimatedSprite")]
 script = ExtResource("1_mnuvm")
@@ -25,4 +26,5 @@ texture = ExtResource("2_4rrvo")
 script = ExtResource("3_mv5qe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_t206n")
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_dih8h")

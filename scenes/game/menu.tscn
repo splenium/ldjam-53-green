@@ -1,17 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dno5iqs6m0odd"]
+[gd_scene load_steps=11 format=3 uid="uid://0ba3fnv5nws4"]
 
-[ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="1_3o75k"]
-[ext_resource type="Script" path="res://assets/scripts/HandleMenu.cs" id="1_gv503"]
-[ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="1_orhi2"]
-[ext_resource type="Material" uid="uid://da1gv3vvnk3pt" path="res://assets/scripts/shaders/IconMat.tres" id="2_8wvdv"]
-[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_4ibyu"]
-[ext_resource type="Script" path="res://assets/scripts/SetMenuMask.cs" id="4_01cn8"]
-[ext_resource type="Texture2D" uid="uid://bkocad8x44cbd" path="res://assets/UI/IconMask.png" id="5_cbw8y"]
-[ext_resource type="AudioStream" uid="uid://ckm51mfbyqv14" path="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3" id="7_gkjgv"]
-[ext_resource type="Texture2D" uid="uid://lm4bpp8gpoec" path="res://assets/UI/Credits.png" id="9_8l6do"]
+[ext_resource type="Script" path="res://assets/scripts/HandleMenu.cs" id="1_s81ax"]
+[ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="2_7mp18"]
+[ext_resource type="Material" uid="uid://da1gv3vvnk3pt" path="res://assets/scripts/shaders/IconMat.tres" id="3_arlyy"]
+[ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="4_7drx7"]
+[ext_resource type="Script" path="res://assets/scripts/SetMenuMask.cs" id="5_61oat"]
+[ext_resource type="Texture2D" uid="uid://bkocad8x44cbd" path="res://assets/UI/IconMask.png" id="6_wnej1"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="7_0c80n"]
+[ext_resource type="AudioStream" uid="uid://ckm51mfbyqv14" path="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3" id="8_0a66k"]
+[ext_resource type="Texture2D" uid="uid://lm4bpp8gpoec" path="res://assets/UI/Credits.png" id="9_ljvis"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ym3xy"]
-font = ExtResource("3_4ibyu")
+font = ExtResource("7_0c80n")
 font_size = 40
 font_color = Color(1, 0.745098, 0, 1)
 
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gv503")
+script = ExtResource("1_s81ax")
 LabelDeliver = NodePath("VBoxContainer/GridContainer/TickDeliver")
 LabelCredits = NodePath("VBoxContainer/GridContainer/TickExpeditors")
 CreditsTexture = NodePath("MarginContainer/TextureRect2")
@@ -36,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3o75k")
+texture = ExtResource("2_7mp18")
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -58,18 +58,18 @@ size_flags_stretch_ratio = 3.0
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer"]
 texture_filter = 1
-material = ExtResource("2_8wvdv")
+material = ExtResource("3_arlyy")
 layout_mode = 2
-texture = ExtResource("1_orhi2")
+texture = ExtResource("4_7drx7")
 stretch_mode = 5
-script = ExtResource("4_01cn8")
-MaskTexture = ExtResource("5_cbw8y")
+script = ExtResource("5_61oat")
+MaskTexture = ExtResource("6_wnej1")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer"]
 visible = false
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_orhi2")
+texture = ExtResource("4_7drx7")
 stretch_mode = 5
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
@@ -102,7 +102,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_gkjgv")
+stream = ExtResource("8_0a66k")
 autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -121,7 +121,7 @@ grow_vertical = 2
 visible = false
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("9_8l6do")
+texture = ExtResource("9_ljvis")
 expand_mode = 5
 stretch_mode = 5
 

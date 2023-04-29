@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://7rn7bg3lod18"]
+
+[ext_resource type="PackedScene" uid="uid://mm3lhyb8f6m2" path="res://assets/prefabs/PlanetPlayer.tscn" id="1_jkqe1"]
+[ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_sylww"]
+[ext_resource type="PackedScene" uid="uid://drcvavequkx5s" path="res://assets/prefabs/Box.tscn" id="3_6yjla"]
+[ext_resource type="Texture2D" uid="uid://b70mwvhkx8a8r" path="res://assets/sprites/Landscape1.png" id="4_n5n5x"]
+
+[node name="PlanetScene" type="Node2D"]
+texture_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -373.0
+offset_top = -88.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.745098, 0, 0.470588, 1)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_jkqe1")]
+position = Vector2(418, 312)
+scale = Vector2(4, 4)
+
+[node name="Box" parent="." instance=ExtResource("3_6yjla")]
+position = Vector2(934, 563)
+
+[node name="Ground" parent="." instance=ExtResource("2_sylww")]
+
+[node name="TextureRect" type="TextureRect" parent="Ground"]
+offset_left = -1257.0
+offset_top = -200.0
+offset_right = -14.0
+offset_bottom = 81.0
+scale = Vector2(2.33959, 1.49575)
+texture = ExtResource("4_n5n5x")

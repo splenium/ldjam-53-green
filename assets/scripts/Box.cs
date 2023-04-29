@@ -74,7 +74,7 @@ public partial class Box : Area2D
 
 	private void SetMissionSelectVisible(bool visible, Node2D body)
 	{
-        Player p = body as Player;
+        CharacterBody2D p = body as CharacterBody2D;
 		if (p != null && GameManager.SelectedMission == null)
         {
             MissionSelection.Visible = visible;

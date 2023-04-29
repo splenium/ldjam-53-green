@@ -14,6 +14,7 @@ public partial class GameManager : Node
 	{
 		this.SelectedMission = mission;
 		// TODO Change scene
+		GetTree().ChangeSceneToFile("res://scenes/menu.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

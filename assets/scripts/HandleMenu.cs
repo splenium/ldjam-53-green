@@ -39,6 +39,9 @@ public partial class HandleMenu : Control
             time += steptime;
         }
         Fader.Color = new Color(0, 0, 0,1);
+        await ToSignal(GetTree().CreateTimer(1), "timeout");
+        GetTree().ChangeSceneToFile("res://scenes/game/PlanetScene.tscn");
+
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
