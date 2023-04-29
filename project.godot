@@ -82,6 +82,12 @@ mission_two={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Spaceship"
+2d_render/layer_2="Asteroid"
+2d_navigation/layer_1="Spaces"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
