@@ -20,11 +20,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s81ax")
-LabelDeliver = NodePath("VBoxContainer/GridContainer/TickDeliver")
-LabelCredits = NodePath("VBoxContainer/GridContainer/TickExpeditors")
+LabelDeliver = NodePath("VBoxContainer/GridContainer/MarginContainer/TickDeliver")
+LabelCredits = NodePath("VBoxContainer/GridContainer/MarginContainer3/TickExpeditors")
 CreditsTexture = NodePath("MarginContainer/TextureRect2")
 Fader = NodePath("FadeRect")
 
@@ -34,6 +36,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -246.0
+offset_right = 353.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7mp18")
@@ -78,21 +84,36 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="TickDeliver" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
-text = ">"
-label_settings = SubResource("LabelSettings_ym3xy")
+theme_override_constants/margin_right = 10
 
-[node name="Deliver" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="TickDeliver" type="Label" parent="VBoxContainer/GridContainer/MarginContainer"]
+layout_mode = 2
+text = "X"
+label_settings = SubResource("LabelSettings_ym3xy")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Deliver" type="Label" parent="VBoxContainer/GridContainer/MarginContainer2"]
 layout_mode = 2
 text = "deliver"
 label_settings = SubResource("LabelSettings_ym3xy")
 
-[node name="TickExpeditors" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="TickExpeditors" type="Label" parent="VBoxContainer/GridContainer/MarginContainer3"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_ym3xy")
 
-[node name="Expeditors" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Expeditors" type="Label" parent="VBoxContainer/GridContainer/MarginContainer4"]
 layout_mode = 2
 text = "expeditors"
 label_settings = SubResource("LabelSettings_ym3xy")

@@ -1,4 +1,4 @@
-using Godot;
+﻿using Godot;
 using System;
 
 public partial class HandleMenu : Control
@@ -64,13 +64,13 @@ public partial class HandleMenu : Control
 
             if (_isOnDeliver)
             {
-                LabelDeliver.Text = ">";
+                LabelDeliver.Text = "X";
                 LabelCredits.Text = "";
             }
             else
             {
                 LabelDeliver.Text = "";
-                LabelCredits.Text = ">";
+                LabelCredits.Text = "X";
             }
 
             if (Input.IsActionJustReleased("ente" +
