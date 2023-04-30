@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boae6mpg1rnor"
-path="res://.godot/imported/spaceships.png-76931b54b70a0b2794180392af0fd75f.ctex"
+uid="uid://c8cpfxh6byold"
+path="res://.godot/imported/Nebula Blue.png-25676905da9fd79ce0b27b7b06102e79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spaceships.png"
-dest_files=["res://.godot/imported/spaceships.png-76931b54b70a0b2794180392af0fd75f.ctex"]
+source_file="res://scenes/Nebula Blue.png"
+dest_files=["res://.godot/imported/Nebula Blue.png-25676905da9fd79ce0b27b7b06102e79.ctex"]
 
 [params]
 

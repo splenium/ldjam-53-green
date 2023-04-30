@@ -28,6 +28,6 @@ public partial class Mission : MarginContainer
 
 		this.labelMission.Text = missionLabel;
 		this.key.Text = missionKey;
-		this.labelCash.Text = cash.ToString() + "$";
+		this.labelCash.Text = cash.ToString();
 	}
 }

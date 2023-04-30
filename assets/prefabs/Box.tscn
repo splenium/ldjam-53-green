@@ -21,10 +21,11 @@ scale = Vector2(3.31818, 3.31818)
 texture = ExtResource("2_vmhxc")
 
 [node name="MissionList" type="VBoxContainer" parent="."]
-offset_left = -223.0
-offset_top = -201.0
-offset_right = 249.0
-offset_bottom = -116.0
+offset_left = -109.0
+offset_top = -192.0
+offset_right = 115.0
+offset_bottom = -107.0
+size_flags_horizontal = 3
 
 [node name="MarginContainer" parent="MissionList" instance=ExtResource("3_rpgq3")]
 layout_mode = 2

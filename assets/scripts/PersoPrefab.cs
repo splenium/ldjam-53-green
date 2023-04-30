@@ -19,7 +19,7 @@ public partial class PersoPrefab : CharacterBody2D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 
 		Vector2 move = Vector2.Zero;
@@ -39,8 +39,6 @@ public partial class PersoPrefab : CharacterBody2D
 			AnimatedSprite.Play("Idle");
 
 		move.Y = 500f;
-
-
 
 		CharacterBody.Velocity = move;
 		CharacterBody.MoveAndSlide();
