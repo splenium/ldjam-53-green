@@ -24,8 +24,8 @@ public partial class Box : Area2D
 
         int[] cash = new int[]
         {
-            10,
-            16
+            100,
+            160
         };
 
         string[] keys = new string[] {
@@ -67,7 +67,6 @@ public partial class Box : Area2D
         Mission m = this.MissionSelection.GetChildren()[i] as Mission;
         if (m != null)
         {
-            _gameManager.cash += m.cash;
             _gameManager.LoadMission(m);
         }
     }
