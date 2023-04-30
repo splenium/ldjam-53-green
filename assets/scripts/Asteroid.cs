@@ -24,7 +24,7 @@ public partial class Asteroid : Area2D
             case AsteroidSize.Large:
                 speed = GD.RandRange(50, 100);
                 _sprite.Texture = GD.Load("res://assets/sprites/space/meteors/meteorBrown_big1.png") as Texture2D;
-                // _collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_big.tres") as Shape2D;
+                //_collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_big.tres") as Shape2D;
                 break;
             case AsteroidSize.Medium:
                 speed = GD.RandRange(100, 150);
@@ -42,14 +42,6 @@ public partial class Asteroid : Area2D
     public override void _PhysicsProcess(double delta)
     {
         GlobalPosition += movementVector.Rotated(Rotation) * speed * (float)delta;
-
-        var screenSize = GetViewportRect().Size;
-        //var circleShape2D = (CircleShape2D)_collisionShape.Shape;
-        //if (Position.Y + circleShape2D.Radius < 0 || Position.Y - circleShape2D.Radius > screenSize.Y 
-        //    || Position.X + circleShape2D.Radius < 0 || Position.X - circleShape2D.Radius > screenSize.X )
-        //{
-        //    Explode();
-        //}
     }
 
     void _on_body_entered(Node node)
