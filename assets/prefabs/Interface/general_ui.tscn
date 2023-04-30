@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhlsdvcjhnpmb"]
+
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="1_6rpei"]
+[ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="2_rhgmc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uums2"]
+font = ExtResource("1_6rpei")
+
+[node name="GeneralUI" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRightContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 3
+
+[node name="Cash" type="HBoxContainer" parent="TopRightContainer"]
+layout_mode = 2
+
+[node name="Value" type="MarginContainer" parent="TopRightContainer/Cash"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="Label" type="Label" parent="TopRightContainer/Cash/Value"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "5"
+label_settings = SubResource("LabelSettings_uums2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Symbol" type="MarginContainer" parent="TopRightContainer/Cash"]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -11
+
+[node name="TextureRect" type="TextureRect" parent="TopRightContainer/Cash/Symbol"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource("2_rhgmc")
+expand_mode = 1
+stretch_mode = 5
