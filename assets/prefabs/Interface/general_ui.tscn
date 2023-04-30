@@ -6,6 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_uums2"]
 font = ExtResource("1_6rpei")
+font_size = 72
 
 [node name="GeneralUI" type="Control" node_paths=PackedStringArray("CashLabel")]
 texture_filter = 1
@@ -53,5 +54,4 @@ layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource("2_rhgmc")
-expand_mode = 1
 stretch_mode = 5
