@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnt42u1esyvyr"]
+
+[ext_resource type="Material" uid="uid://3cuafort4eyy" path="res://assets/shaders/SunShaderMat.tres" id="1_4psiy"]
+
+[node name="Sun" type="ColorRect"]
+material = ExtResource("1_4psiy")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(17.8609, 17.8609)
+color = Color(1, 0, 1, 1)
