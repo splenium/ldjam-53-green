@@ -21,6 +21,8 @@ font = ExtResource("3_gyxvx")
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_td2bv")
 labelMission = NodePath("MarginContainer2/HBoxContainer/MarginContainer/MissionLabel")
 labelCash = NodePath("MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer/Label")
@@ -82,6 +84,7 @@ vertical_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer2/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -101,18 +104,16 @@ label_settings = SubResource("LabelSettings_gxcj8")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer"]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer"]
-layout_mode = 2
+theme_override_constants/margin_left = -6
 theme_override_constants/margin_top = -10
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource("4_mwesq")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5

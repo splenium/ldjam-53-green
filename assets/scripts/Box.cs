@@ -18,13 +18,13 @@ public partial class Box : Area2D
 
         string[] labels = new string[] {
             "Report the letter to Aliatrox",
-            "Send Gift to Bibobux"
+            "Send Gift to the world of the incredible Bibobux"
         };
 
         int[] cash = new int[]
         {
             10,
-            12
+            16
         };
 
         string[] keys = new string[] {
@@ -62,7 +62,7 @@ public partial class Box : Area2D
         Mission m = this.MissionSelection.GetChildren()[i] as Mission;
         if (m != null)
         {
-            GameManager.SetMission(m);
+            GameManager.LoadMission(m);
         }
     }
 
