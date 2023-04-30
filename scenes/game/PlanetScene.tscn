@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://7rn7bg3lod18"]
 
-[ext_resource type="PackedScene" uid="uid://mm3lhyb8f6m2" path="res://assets/prefabs/PlanetPlayer.tscn" id="1_jkqe1"]
+[ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="1_jkqe1"]
 [ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_sylww"]
 [ext_resource type="PackedScene" uid="uid://drcvavequkx5s" path="res://assets/prefabs/Box.tscn" id="3_6yjla"]
 [ext_resource type="Texture2D" uid="uid://b70mwvhkx8a8r" path="res://assets/sprites/Landscape1.png" id="4_n5n5x"]

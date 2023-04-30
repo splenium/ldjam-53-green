@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://ce0bfaqefcuwq"]
+
+[ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="1_3o75k"]
+[ext_resource type="Script" path="res://assets/scripts/HandleMenu.cs" id="1_gv503"]
+[ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="1_orhi2"]
+[ext_resource type="Material" uid="uid://da1gv3vvnk3pt" path="res://assets/scripts/shaders/IconMat.tres" id="2_8wvdv"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_4ibyu"]
+[ext_resource type="Script" path="res://assets/scripts/SetMenuMask.cs" id="4_01cn8"]
+[ext_resource type="Texture2D" uid="uid://bkocad8x44cbd" path="res://assets/UI/IconMask.png" id="5_cbw8y"]
+[ext_resource type="AudioStream" uid="uid://ckm51mfbyqv14" path="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3" id="7_gkjgv"]
+[ext_resource type="Texture2D" uid="uid://lm4bpp8gpoec" path="res://assets/UI/Credits.png" id="9_8l6do"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym3xy"]
+font = ExtResource("3_4ibyu")
+font_size = 40
+font_color = Color(1, 0.745098, 0, 1)
+
+[node name="menu" type="Control" node_paths=PackedStringArray("LabelDeliver", "LabelCredits", "CreditsTexture", "Fader")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gv503")
+LabelDeliver = NodePath("VBoxContainer/GridContainer/TickDeliver")
+LabelCredits = NodePath("VBoxContainer/GridContainer/TickExpeditors")
+CreditsTexture = NodePath("MarginContainer/TextureRect2")
+Fader = NodePath("FadeRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3o75k")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+texture_filter = 1
+material = ExtResource("2_8wvdv")
+layout_mode = 2
+texture = ExtResource("1_orhi2")
+stretch_mode = 5
+script = ExtResource("4_01cn8")
+MaskTexture = ExtResource("5_cbw8y")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_orhi2")
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="TickDeliver" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = ">"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="Deliver" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "deliver"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="TickExpeditors" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="Expeditors" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "expeditors"
+label_settings = SubResource("LabelSettings_ym3xy")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_gkjgv")
+autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_8l6do")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="FadeRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
