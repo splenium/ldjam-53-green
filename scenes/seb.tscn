@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqajmd2vjete1"]
+[gd_scene load_steps=5 format=3 uid="uid://cqajmd2vjete1"]
 
+[ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_2xw6m"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
+[ext_resource type="PackedScene" uid="uid://bieuufe5cdqcl" path="res://assets/prefabs/EyeCreature.tscn" id="3_u08m6"]
+[ext_resource type="PackedScene" uid="uid://8yi58elmr10y" path="res://assets/floating_pilar.tscn" id="4_0ouix"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(436, 370)
 scale = Vector2(10, 10)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_ijweu")]
+
+[node name="Ground" parent="." instance=ExtResource("2_2xw6m")]
+position = Vector2(50.7, 31.2)
+
+[node name="EyeCreature" parent="." instance=ExtResource("3_u08m6")]
+
+[node name="FloatingPilar" parent="." instance=ExtResource("4_0ouix")]
