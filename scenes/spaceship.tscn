@@ -14,10 +14,11 @@ spawnTimer = NodePath("AsteroidsTimer")
 playerSpaceships = NodePath("../PlayerSpaceships")
 
 [node name="AsteroidsTimer" type="Timer" parent="Asteroids"]
+wait_time = 0.5
 autostart = true
 
 [node name="PlayerSpaceships" parent="." instance=ExtResource("2_eweg3")]
-position = Vector2(790.141, 413)
+position = Vector2(576, 326)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpaceships"]
 
@@ -46,5 +47,23 @@ motion_mirroring = Vector2(4096, 4096)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ForegroundStars"]
 texture = ExtResource("4_5444d")
 centered = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 41.0
+offset_bottom = 27.0
+text = "CACA !"
 
 [connection signal="timeout" from="Asteroids/AsteroidsTimer" to="Asteroids" method="_on_asteroids_timer_timeout"]
