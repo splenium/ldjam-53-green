@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://7rn7bg3lod18"]
+[gd_scene load_steps=28 format=3 uid="uid://7rn7bg3lod18"]
 
 [ext_resource type="Script" path="res://assets/scripts/PlanetSceneManager.cs" id="1_i4bn7"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="1_jkqe1"]
@@ -12,6 +12,9 @@
 [ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="5_yljjc"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="7_wgvx4"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="8_137h0"]
+[ext_resource type="Script" path="res://assets/scripts/LandscapeRocket.cs" id="8_r3k50"]
+[ext_resource type="Texture2D" uid="uid://by6w54irxl4gt" path="res://assets/sprites/space/Ship.png" id="9_g020g"]
+[ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="11_6utgy"]
 [ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="11_b7ryp"]
 [ext_resource type="Script" path="res://assets/scripts/Actor.cs" id="12_y0ltt"]
 [ext_resource type="Texture2D" uid="uid://ce65svog6n4w3" path="res://assets/sprites/Alien.png" id="13_j8xxp"]
@@ -23,6 +26,17 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xuyba"]
 gradient = SubResource("Gradient_hk26n")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjrl3"]
+radius = 124.064
+
+[sub_resource type="LabelSettings" id="LabelSettings_kydiw"]
+font = ExtResource("14_44y0g")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kieg"]
+font = ExtResource("14_44y0g")
+font_size = 20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
 size = Vector2(739, 145.558)
@@ -62,6 +76,57 @@ scale = Vector2(3, 3)
 texture = ExtResource("5_y6l0u")
 script = ExtResource("7_wgvx4")
 Speed = 0.5
+
+[node name="Rocket" type="Area2D" parent="PlanetsContainer/Fartopia" node_paths=PackedStringArray("jumpToSpace", "costLabel")]
+position = Vector2(-28, 451)
+script = ExtResource("8_r3k50")
+jumpToSpace = NodePath("VBoxContainer")
+costLabel = NodePath("VBoxContainer/MarginContainer/HBoxContainer2/Label")
+
+[node name="RockIt" type="Sprite2D" parent="PlanetsContainer/Fartopia/Rocket"]
+scale = Vector2(5, 5)
+texture = ExtResource("9_g020g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetsContainer/Fartopia/Rocket"]
+position = Vector2(-1, 88)
+shape = SubResource("CircleShape2D_pjrl3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlanetsContainer/Fartopia/Rocket"]
+offset_left = 73.0
+offset_top = -74.0
+offset_right = 202.0
+offset_bottom = -18.0
+
+[node name="Label" type="Label" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer"]
+layout_mode = 2
+text = "E - Go in space"
+label_settings = SubResource("LabelSettings_kydiw")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Cost:   10"
+label_settings = SubResource("LabelSettings_3kieg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -7
+
+[node name="TextureRect" type="TextureRect" parent="PlanetsContainer/Fartopia/Rocket/VBoxContainer/MarginContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource("11_6utgy")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CharacterBody2D" parent="PlanetsContainer/Fartopia" instance=ExtResource("1_jkqe1")]
 position = Vector2(298, 518)
@@ -187,5 +252,7 @@ Attached = NodePath("../CharacterBody2D")
 
 [node name="GeneralUI" parent="HUD" instance=ExtResource("5_y53ft")]
 
+[connection signal="body_entered" from="PlanetsContainer/Fartopia/Rocket" to="PlanetsContainer/Fartopia/Rocket" method="OnBodyEntered"]
+[connection signal="body_exited" from="PlanetsContainer/Fartopia/Rocket" to="PlanetsContainer/Fartopia/Rocket" method="OnBodyExited"]
 [connection signal="body_entered" from="PlanetsContainer/Fartopia/Alien" to="PlanetsContainer/Fartopia/Alien" method="OnBodyEntered"]
 [connection signal="body_exited" from="PlanetsContainer/Fartopia/Alien" to="PlanetsContainer/Fartopia/Alien" method="OnBodyExited"]

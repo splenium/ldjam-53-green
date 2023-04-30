@@ -10,7 +10,7 @@ public partial class GameManager : Node
 
 	// Called when the node enters the scene tree for the first time.
 
-	private int _startCash = 40;
+	private int _startCash = 0;
 	public override void _Ready()
 	{
 		this.newGame();
@@ -34,6 +34,11 @@ public partial class GameManager : Node
 		this.SelectedMission = mission;
 		// this.LoadScene("res://scenes/menu.tscn");
 
+	}
+
+	public void Pay(int cost)
+	{
+		this.cash -= cost;
 	}
 
 	public void MissionSucces()
