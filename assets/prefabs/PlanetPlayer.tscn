@@ -9,6 +9,9 @@
 radius = 8.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("CharacterBody", "AnimatedSprite")]
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 3.14159
 script = ExtResource("1_mnuvm")
 CharacterBody = NodePath(".")
 AnimatedSprite = NodePath("AnimatedSprite2D")
@@ -26,5 +29,5 @@ texture = ExtResource("2_4rrvo")
 script = ExtResource("3_mv5qe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_dih8h")

@@ -22,6 +22,7 @@ GameManager="*res://GameManager.cs"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [dotnet]
 

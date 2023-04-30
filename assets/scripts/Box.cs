@@ -7,14 +7,15 @@ public partial class Box : Area2D
 {
     [Export]
     private Control MissionSelection { get; set; }
-    private GameManager GameManager { get; set; }
+    private GameManager _gameManager { get; set; }
 
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
         MissionSelection.Visible = false;
-        GameManager = GetNode<GameManager>("/root/GameManager");
+        _gameManager = GetNode<GameManager>("/root/GameManager");
+        _gameManager.SelectedMission = null;
 
         string[] labels = new string[] {
             "Report the letter to Aliatrox",
@@ -48,12 +49,16 @@ public partial class Box : Area2D
 
     public override void _Process(double delta)
     {
-        if(Input.IsActionPressed("mission_one") && MissionSelection.Visible)
+        if (MissionSelection.Visible)
         {
-            this.ChoiceDone(0);
-        } else if (Input.IsActionPressed("mission_two") && MissionSelection.Visible)
-        {
-            this.ChoiceDone(1);
+            if (Input.IsActionPressed("mission_one"))
+            {
+                this.ChoiceDone(0);
+            }
+            else if (Input.IsActionPressed("mission_two"))
+            {
+                this.ChoiceDone(1);
+            }
         }
     }
 
@@ -62,7 +67,8 @@ public partial class Box : Area2D
         Mission m = this.MissionSelection.GetChildren()[i] as Mission;
         if (m != null)
         {
-            GameManager.LoadMission(m);
+            _gameManager.cash += m.cash;
+            _gameManager.LoadMission(m);
         }
     }
 
@@ -75,7 +81,7 @@ public partial class Box : Area2D
 	private void SetMissionSelectVisible(bool visible, Node2D body)
 	{
         CharacterBody2D p = body as CharacterBody2D;
-		if (p != null && GameManager.SelectedMission == null)
+		if (p != null && _gameManager.SelectedMission == null)
         {
             MissionSelection.Visible = visible;
         }

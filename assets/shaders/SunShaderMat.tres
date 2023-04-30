@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://3cuafort4eyy"]
+
+[ext_resource type="Shader" path="res://assets/shaders/Sun.gdshader" id="1_qyg1p"]
+
+[resource]
+shader = ExtResource("1_qyg1p")
+shader_parameter/SunColor = Vector4(1, 0.35, 0.2, 0)

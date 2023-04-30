@@ -3,9 +3,9 @@ using System;
 
 public partial class Mission : MarginContainer
 {
-	private string MissionLabel;
+	public string MissionLabel;
 	private string MissionKey;
-	private int cash;
+	public int cash { get; set; }
 
 	[Export]
 	private Label labelMission;
@@ -13,11 +13,6 @@ public partial class Mission : MarginContainer
     private Label labelCash;
     [Export]
 	private Label key;
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 
 	public void setNewMission(string missionLabel, string missionKey, int cash)
 	{
