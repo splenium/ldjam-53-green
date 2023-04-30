@@ -9,6 +9,16 @@ public partial class Box : Area2D
     private Control MissionSelection { get; set; }
     private GameManager _gameManager { get; set; }
 
+    [Export]
+    private string[] labels;
+    [Export]
+    private int[] rewards;
+    [Export]
+    private string[] keys;
+    [Export]
+    private int[] planetTarget;
+
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -17,33 +27,17 @@ public partial class Box : Area2D
         _gameManager = GetNode<GameManager>("/root/GameManager");
         _gameManager.SelectedMission = null;
 
-        string[] labels = new string[] {
-            "Report the letter to Aliatrox",
-            "Send Gift to the world of the incredible Bibobux"
-        };
-
-        int[] cash = new int[]
-        {
-            100,
-            160
-        };
-
-        string[] keys = new string[] {
-            "E",
-            "R"
-        };
-
         for (int i = 0; i < labels.Length; i++)
         {
-            this.SetMission(labels[i], cash[i], keys[i], this.MissionSelection.GetChildren()[i]);
+            this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], this.MissionSelection.GetChildren()[i]);
         }
     }
 
-    private void SetMission(string label, int cash, string key, Node node)
+    private void SetMission(string label, int reward, string key, int planetTarget, Node node)
     {
         Mission m = node as Mission;
         if(m != null) {
-            m.setNewMission(label, key, cash);
+            m.setNewMission(label, key, reward, planetTarget);
         }
     }
 

@@ -40,7 +40,7 @@ public partial class GameManager : Node
 	{
 		if(SelectedMission != null)
 		{
-			this.cash += this.SelectedMission.cash;
+			this.cash += this.SelectedMission.reward;
 			this.SelectedMission = null;
 		}
 	}

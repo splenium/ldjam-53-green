@@ -24,8 +24,7 @@ public partial class Actor : Area2D
 
     private bool MissionIsForMe()
     {
-        // TODO: make other condition to refuse not for us package
-        return _gameManager.SelectedMission != null;
+        return _gameManager.SelectedMission != null && _gameManager.SelectedMission.planetTarget == _gameManager.PlanetPosition;
     }
 
     public override void _Process(double delta)

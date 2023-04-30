@@ -76,6 +76,10 @@ offset = Vector2(0, -150)
 
 [node name="Box" parent="PlanetsContainer/Fartopia" instance=ExtResource("3_6yjla")]
 position = Vector2(618, 560)
+labels = PackedStringArray("Report the letter to Aliatrox", "Send Gift to the world of the incredible Bibobux")
+rewards = PackedInt32Array(10, 25)
+keys = PackedStringArray("E", "R")
+planetTarget = PackedInt32Array(0, 1)
 
 [node name="Landscape01" parent="PlanetsContainer/Fartopia" instance=ExtResource("4_gnbrj")]
 position = Vector2(546, 625)
