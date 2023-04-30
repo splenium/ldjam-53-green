@@ -22,13 +22,11 @@ public partial class AsteroidsManager : Node
 
     void _on_asteroids_timer_timeout()
     {
-        GD.Print("Asteroid is comming !");
         var instance = _asteroidPrefabs.Instantiate() as Node2D;
         AddChild(instance);
 
         Vector2 spawnPosition = playerSpaceships.GlobalPosition + _offSets[(int)GD.RandRange(0, _offSets.Count()-1)] * 645;
         instance.GlobalPosition = spawnPosition;
-        GD.Print(spawnPosition);
 
         spawnTimer.Start(spawnTimer.WaitTime);
     }

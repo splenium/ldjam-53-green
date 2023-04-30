@@ -56,7 +56,6 @@ public partial class Asteroid : Area2D
 
     void _on_body_entered(Node node)
     {
-        GD.Print("CACAAAAAAAAAAAA!");
         QueueFree();
     }
 }
