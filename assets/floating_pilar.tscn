@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8yi58elmr10y"]
+
+[ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="1_ebxl5"]
+[ext_resource type="Texture2D" uid="uid://cd5o2dsrnwuhc" path="res://assets/sprites/Floating.png" id="2_tm3ar"]
+
+[node name="FloatingPilar" type="Node2D"]
+texture_filter = 1
+position = Vector2(23.8, -38.5)
+scale = Vector2(0.450253, 0.450253)
+script = ExtResource("1_ebxl5")
+Amplitude = 0.3
+Seed = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_tm3ar")
