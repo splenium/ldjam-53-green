@@ -6,6 +6,7 @@ public partial class GameManager : Node
 
 	public Mission SelectedMission { get; set; }
 	public int cash { get; set; }
+	public int PlanetPosition { get; set; }
 
 	// Called when the node enters the scene tree for the first time.
 
@@ -19,6 +20,7 @@ public partial class GameManager : Node
 	{
 		this.SelectedMission = null;
 		this.cash = _startCash;
+		this.PlanetPosition = 0;
 	}
 
 	public void LoadScene(string scenePath)

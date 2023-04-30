@@ -5,6 +5,8 @@ public partial class PersoPrefab : CharacterBody2D
 {
 	private float moveSpeed = 200f;
 	[Export]
+	private float gravity = 50f;
+	[Export]
 	private CharacterBody2D CharacterBody;
 	[Export]
 	private AnimatedSprite2D AnimatedSprite;
@@ -22,7 +24,7 @@ public partial class PersoPrefab : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 
-		Vector2 move = Vector2.Zero;
+		Vector2 move = new(0, gravity);
 		if (Input.IsActionPressed("right"))
 		{
 			AnimatedSprite.Scale = new Vector2(1, 1);
@@ -33,12 +35,10 @@ public partial class PersoPrefab : CharacterBody2D
 			AnimatedSprite.Scale = new Vector2(-1, 1);
 			move.X = -this.moveSpeed;
 		}
-		if (move.Length() > 0.1)
+		if (move.X > 0.1 || move.X < -0.1)
 			AnimatedSprite.Play("Walk");
 		else
 			AnimatedSprite.Play("Idle");
-
-		move.Y = 500f;
 
 		CharacterBody.Velocity = move;
 		CharacterBody.MoveAndSlide();

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4tdxjvi8p1ah"]
+
+[ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="1_blbkq"]
+
+[node name="Landscape01" type="StaticBody2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -619.0
+offset_top = 34.0
+offset_right = -579.0
+offset_bottom = 74.0
+scale = Vector2(32.1154, 4.73796)
+color = Color(0, 0, 0, 1)
+
+[node name="Landscape3" type="Sprite2D" parent="."]
+position = Vector2(23, -39)
+scale = Vector2(1.25536, 1.14063)
+texture = ExtResource("1_blbkq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(23, -39)
+scale = Vector2(1.25536, 1.14063)
+polygon = PackedVector2Array(-415.3, 2, -372.803, -9.64386, -360.057, -8.76712, -307.9, 27, -294.737, 22.7945, -271.6, 19.7, -257.3, 9, -238.7, 9, -195.1, 15.6, -144.1, -16, -129.7, -16, -82.2, -9.4, -67.2, -19, -52.6, -19, -33.4566, -27.1781, 19.1, 9, 35.4, 9, 76.4724, -1.75345, 132.233, 33.3151, 214.282, -15.7808, 270.043, 19.2877, 322.618, 7.89038, 380.769, 43.8356, 414.225, 36.8219, 429.7, 27, 448.3, 27, 491.9, 33.6, 511.409, 20.1644, 511, 63, -511, 63, -511, -11, -473.173, -33.3151)
