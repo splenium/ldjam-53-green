@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://mm3lhyb8f6m2"]
+[gd_scene load_steps=6 format=3 uid="uid://dp4lgex5gobjt"]
 
 [ext_resource type="Script" path="res://assets/scripts/PersoPrefab.cs" id="1_mnuvm"]
 [ext_resource type="SpriteFrames" uid="uid://bbwtd86ajjhfl" path="res://assets/sprites/PersoAnim.tres" id="1_phqpx"]
