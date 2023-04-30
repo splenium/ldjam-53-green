@@ -3,9 +3,11 @@ using System;
 
 public partial class HandleMenu : Control
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+    private GameManager _gameManager { get; set; }
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
+        _gameManager = GetNode<GameManager>("/root/GameManager");
         CreditsTexture.Visible = false;
     }
 
@@ -40,7 +42,7 @@ public partial class HandleMenu : Control
         }
         Fader.Color = new Color(0, 0, 0,1);
         await ToSignal(GetTree().CreateTimer(1), "timeout");
-        GetTree().ChangeSceneToFile("res://scenes/game/PlanetScene.tscn");
+        _gameManager.LoadScene("res://scenes/game/PlanetScene.tscn");
 
     }
 
