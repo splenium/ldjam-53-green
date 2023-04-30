@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dx771yk0bepo7"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D"]
-position = Vector2(3.04913, 0)
-scale = Vector2(4.80491, 1)
-polygon = PackedVector2Array(-1.67519, -37, 0.197895, -36, 1.44662, -18, 11.2283, 6, 7.27399, 36, 2.69534, 31, 2.07098, 40, -3.34015, 38, -4.17263, 31, -8.54316, 36, -12.2893, 6, -2.92391, -19)
