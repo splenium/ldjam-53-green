@@ -32,11 +32,16 @@ public partial class GameManager : Node
 	public void LoadMission(Mission mission)
 	{
 		this.SelectedMission = mission;
-		this.LoadScene("res://scenes/menu.tscn");
+		// this.LoadScene("res://scenes/menu.tscn");
+
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void MissionSucces()
 	{
+		if(SelectedMission != null)
+		{
+			this.cash += this.SelectedMission.cash;
+			this.SelectedMission = null;
+		}
 	}
 }

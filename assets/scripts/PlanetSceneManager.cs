@@ -15,7 +15,7 @@ public partial class PlanetSceneManager : Node2D
 		List<Node> childToRemove = new();
 		Godot.Collections.Array<Node> planets = PlanetsContainer.GetChildren();
 
-		long thePlanet = GD.Randi() % planets.Count; // gm.PlanetPosition
+		long thePlanet = gm.PlanetPosition; // gm.PlanetPosition
 
         for (int i = 0; i < planets.Count; i++)
 		{
