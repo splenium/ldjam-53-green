@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cq1m0ioq81id3"]
+
+[ext_resource type="Shader" path="res://assets/shaders/EyeCreature.gdshader" id="1_8j52g"]
+
+[resource]
+shader = ExtResource("1_8j52g")
