@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqajmd2vjete1"]
+[gd_scene load_steps=8 format=3 uid="uid://cqajmd2vjete1"]
 
 [ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_2xw6m"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
 [ext_resource type="PackedScene" uid="uid://bieuufe5cdqcl" path="res://assets/prefabs/EyeCreature.tscn" id="3_u08m6"]
 [ext_resource type="PackedScene" uid="uid://8yi58elmr10y" path="res://assets/floating_pilar.tscn" id="4_0ouix"]
+[ext_resource type="Script" path="res://assets/scripts/TreeVariation.cs" id="5_j3enw"]
+[ext_resource type="Material" uid="uid://dehqsyafejri" path="res://assets/shaders/TreeShaderMat.tres" id="5_y81vy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oun30"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(436, 370)
@@ -17,3 +21,13 @@ position = Vector2(50.7, 31.2)
 [node name="EyeCreature" parent="." instance=ExtResource("3_u08m6")]
 
 [node name="FloatingPilar" parent="." instance=ExtResource("4_0ouix")]
+
+[node name="Tree" type="Node2D" parent="." node_paths=PackedStringArray("TexRect")]
+script = ExtResource("5_j3enw")
+TexRect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="Tree"]
+material = ExtResource("5_y81vy")
+offset_right = 100.0
+offset_bottom = 100.0
+texture = SubResource("CanvasTexture_oun30")
