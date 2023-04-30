@@ -42,14 +42,6 @@ scale_max = 5.0
 
 [node name="World" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="BackgroundStarFields" type="Node" parent="."]
 
 [node name="StarFieldBack" type="GPUParticles2D" parent="BackgroundStarFields"]
@@ -75,6 +67,15 @@ amount = 30
 process_material = SubResource("ParticleProcessMaterial_nn5nx")
 lifetime = 140.0
 preprocess = 360.0
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundStarFields"]
+z_index = -1050
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Asteroids" type="Node" parent="."]
 
