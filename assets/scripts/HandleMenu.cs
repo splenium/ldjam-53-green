@@ -8,7 +8,7 @@ public partial class HandleMenu : Control
     public override void _Ready()
 	{
         _gameManager = GetNode<GameManager>("/root/GameManager");
-        CreditsTexture.Visible = false;
+        DisplayCredit(_gameManager.MustShowCreditsFirst);
     }
 
 	private bool _isOnDeliver = true;
@@ -58,8 +58,7 @@ public partial class HandleMenu : Control
 		{
             if (Input.IsActionJustReleased("echap"))
             {
-                _isShowingCredits = false;
-                CreditsTexture.Visible = false;
+                DisplayCredit(false);
             }
 		}
 		else
@@ -86,11 +85,16 @@ public partial class HandleMenu : Control
                 }
                 else
                 {
-                    CreditsTexture.Visible = true;
-                    _isShowingCredits = true;
+                    DisplayCredit(true);
                 }
             }
 
         }
+    }
+
+    private void DisplayCredit(bool display)
+    {
+        CreditsTexture.Visible = display;
+        _isShowingCredits = display;
     }
 }

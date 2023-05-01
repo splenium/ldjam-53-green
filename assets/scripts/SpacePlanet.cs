@@ -42,10 +42,17 @@ public partial class SpacePlanet : Node2D
 		}
 	}
 
+	private bool isFinalPlanet()
+	{
+		return _gameManager.lastMissionPlanet == PlanetId;
+
+    }
+
 	private void SetLandingLabel(bool visible, Node2D node)
 	{
 		CharacterBody2D c = node as CharacterBody2D;
-		if(c != null)
+		bool finalMissionActive = _gameManager.IsFinalMission();
+		if(c != null && ((!finalMissionActive && !isFinalPlanet()) || (finalMissionActive && isFinalPlanet()))) // Final Conditon for planet entrance
 		{
 			LandingLabel.Visible = visible;
 		}

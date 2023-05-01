@@ -34,11 +34,19 @@ public partial class Box : Area2D
 
         CheckAllOk();
 
-        for (int i = 0; i < labels.Length; i++)
+        if(_gameManager.TimeForTheLastTravel())
         {
-            var missionComponent = MissionPrefabs.Instantiate();
-            MissionSelection.AddChild(missionComponent);
-            this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], missionComponent);
+            // The last mission
+            SetLastMission();
+        } else
+        {
+            // Common mission
+            for (int i = 0; i < labels.Length; i++)
+            {
+                var missionComponent = MissionPrefabs.Instantiate();
+                MissionSelection.AddChild(missionComponent);
+                this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], missionComponent);
+            }
         }
 
     }
@@ -52,6 +60,17 @@ public partial class Box : Area2D
             GD.PrintErr("label: " + n + ", rewards: " + rewards.Length + ", keys: " + keys.Length + ", planetTarget:" + planetTarget.Length);
             throw new Exception("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
         }
+    }
+
+    private void SetLastMission()
+    {
+        foreach(var child in MissionSelection.GetChildren())
+        {
+            MissionSelection.RemoveChild(child);
+        }
+        var missionComponent = MissionPrefabs.Instantiate();
+        MissionSelection.AddChild(missionComponent);
+        this.SetMission(_gameManager.lastMissionLabel, _gameManager.lastMissionReward, _gameManager.lastMissionKey, _gameManager.lastMissionPlanet, missionComponent);
     }
 
     private void SetMission(string label, int reward, string key, int planetTarget, Node node)
@@ -135,12 +154,17 @@ public partial class Box : Area2D
 		if (p != null && !_gameManager.MissionInProgress())
         {
             MissionSelection.Visible = visible;
+
         }
     }
 
     private void OnBodyEntered(Node2D body)
 	{
 		this.SetMissionSelectVisible(true, body);
+        if(_gameManager.TimeForTheLastTravel())
+        {
+            SetLastMission();
+        }
         RefreshPossibleMission();
 	}
 

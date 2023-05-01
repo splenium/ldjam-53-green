@@ -15,15 +15,27 @@ public partial class GameManager : Node
 	{
 		"Fecaloria",
 		"Odorix",
-		"Etronis"
-	};
+		"Etronis",
+        "Porcelainus"
+    };
 
-	private string _planetScene = "res://scenes/game/PlanetScene.tscn";
+	public int WinCash = 300;
+
+	public bool MustShowCreditsFirst;
+
+	public string lastMissionLabel { get; } = "A mysterious package... damaged and without indication";
+	public int lastMissionReward { get; } = 10000;
+	public string lastMissionKey { get; } = "E";
+	public int lastMissionPlanet { get; } = 3;
+
+
+    private string _planetScene = "res://scenes/game/PlanetScene.tscn";
     private string _spaceScene = "res://scenes/game/SpaceScene.tscn";
+    private string _menuScene = "res://scenes/game/menu.tscn";
 
     // Called when the node enters the scene tree for the first time.
 
-    private int _startCash = 0;
+    private int _startCash = 200;
 	public override void _Ready()
 	{
 		this.NewGame();
@@ -33,11 +45,22 @@ public partial class GameManager : Node
 	{
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
+		this.MustShowCreditsFirst = false;
+	}
+
+	public bool TimeForTheLastTravel()
+	{
+		return WinCash <= cash;
 	}
 
 	public void LoadScene(string scenePath)
 	{
 		GetTree().ChangeSceneToFile(scenePath);
+	}
+
+	public void LoadMenu()
+	{
+		LoadScene(_menuScene);
 	}
 
 	public void LoadMission(Mission mission)
@@ -84,9 +107,21 @@ public partial class GameManager : Node
 	{
 		if(MissionInProgress())
 		{
-			this.cash += _missionReward;
-			ClearMission();
+			if(IsFinalMission())
+			{
+				MustShowCreditsFirst = true;
+				LoadMenu();
+			} else
+			{
+				this.cash += _missionReward;
+				ClearMission();
+			}
 		}
+	}
+
+	public bool IsFinalMission()
+	{
+		return _missionPlanetTarget == lastMissionPlanet;
 	}
 
 	private void ClearMission()

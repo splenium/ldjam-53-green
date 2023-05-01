@@ -29,17 +29,7 @@ public partial class PlanetSceneManager : Node2D
 
 		if(PlanetLabelName != null)
 		{
-			PlanetLabelName.Text = "🪐 " + gm.PlanetNames[thePlanet]; // the special char is saturn icon :)
+			PlanetLabelName.Text = gm.PlanetNames[thePlanet];
 		}
 	}
-
-    /*public override void _Process(double delta)
-    {
-        if(Input.IsActionJustReleased("echap"))
-		{
-			GetTree().ReloadCurrentScene();
-		}
-    }*/
-
-
 }

@@ -1,0 +1,161 @@
+[gd_scene load_steps=20 format=3 uid="uid://bhdlna004ejq4"]
+
+[ext_resource type="Script" path="res://assets/prefabs/planets/GroundPlanet.cs" id="1_u4bpg"]
+[ext_resource type="Material" uid="uid://criasgmighl7f" path="res://assets/shaders/landscapes/landscape01Bis/Landscape01Bis_Back_ShaderMat.tres" id="2_y6xu0"]
+[ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="3_y5oi0"]
+[ext_resource type="Script" path="res://scenes/game/Follow.cs" id="4_jaxkp"]
+[ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="5_7ya3m"]
+[ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="6_78a4e"]
+[ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="7_dsiop"]
+[ext_resource type="Texture2D" uid="uid://by6w54irxl4gt" path="res://assets/sprites/space/Ship.png" id="8_6e86q"]
+[ext_resource type="Script" path="res://assets/prefabs/planets/LastMission.cs" id="8_8sdpe"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="9_ql35q"]
+[ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="9_yy6ni"]
+[ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="10_6l0yq"]
+[ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="11_g7k56"]
+[ext_resource type="Material" uid="uid://e8clr5o2ts7n" path="res://assets/shaders/landscapes/landscape01Bis/Landscape01Bis_Front_ShaderMat.tres" id="12_a78bs"]
+
+[sub_resource type="Gradient" id="Gradient_hk26n"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xuyba"]
+gradient = SubResource("Gradient_hk26n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mo5pj"]
+font = ExtResource("9_ql35q")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_van6s"]
+radius = 29.533
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
+size = Vector2(739, 145.558)
+
+[node name="Porcelainus" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_u4bpg")
+PlanetId = 3
+
+[node name="Backbackground" type="Sprite2D" parent="."]
+scale = Vector2(51000, 51000)
+texture = SubResource("GradientTexture1D_xuyba")
+
+[node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
+material = ExtResource("2_y6xu0")
+position = Vector2(282, 345)
+scale = Vector2(30, 30)
+texture = ExtResource("3_y5oi0")
+script = ExtResource("4_jaxkp")
+Attached = NodePath("../CharacterBody2D")
+
+[node name="Parrlax1" type="Sprite2D" parent="."]
+material = ExtResource("5_7ya3m")
+position = Vector2(289, 518)
+scale = Vector2(3, 3)
+texture = ExtResource("6_78a4e")
+script = ExtResource("7_dsiop")
+Speed = 0.5
+
+[node name="CrashedShip" type="Node2D" parent="." node_paths=PackedStringArray("label")]
+position = Vector2(289, 518)
+scale = Vector2(3, 3)
+script = ExtResource("8_8sdpe")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="CrashedShip"]
+offset_left = -185.667
+offset_top = -64.0
+offset_right = 164.333
+offset_bottom = -28.0
+text = "E - Open the misterious package"
+label_settings = SubResource("LabelSettings_mo5pj")
+
+[node name="RockIt" type="Sprite2D" parent="CrashedShip"]
+position = Vector2(-162.333, 23.6667)
+rotation = 2.52898
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("8_6e86q")
+
+[node name="Area2D" type="Area2D" parent="CrashedShip"]
+position = Vector2(-162.333, 23.6667)
+rotation = 2.52898
+scale = Vector2(1.66667, 1.66667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrashedShip/Area2D"]
+position = Vector2(0.459343, 8.38982)
+shape = SubResource("CircleShape2D_van6s")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_yy6ni")]
+position = Vector2(302, 534)
+scale = Vector2(4, 4)
+wall_min_slide_angle = 1.34739
+floor_stop_on_slope = true
+floor_constant_speed = true
+gravity = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -150)
+
+[node name="Landscape01" parent="." instance=ExtResource("10_6l0yq")]
+position = Vector2(546, 625)
+
+[node name="Landscape02" parent="." instance=ExtResource("10_6l0yq")]
+position = Vector2(-598, 625)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Landscape03" parent="." instance=ExtResource("10_6l0yq")]
+position = Vector2(1875, 625)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="LandscapeBorder" type="StaticBody2D" parent="."]
+position = Vector2(12, 7)
+
+[node name="BorderLeft" type="CollisionShape2D" parent="LandscapeBorder"]
+position = Vector2(-992, 422)
+scale = Vector2(1, 8.24)
+shape = SubResource("RectangleShape2D_4qsty")
+
+[node name="BorderRight" type="CollisionShape2D" parent="LandscapeBorder"]
+position = Vector2(2195, 330)
+scale = Vector2(1, 8.24)
+shape = SubResource("RectangleShape2D_4qsty")
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2(289, 111)
+rotation = 3.14159
+scale = Vector2(3, -3)
+script = ExtResource("7_dsiop")
+Speed = -0.5
+
+[node name="Parrlax2" type="Sprite2D" parent="Clouds"]
+material = ExtResource("5_7ya3m")
+texture = ExtResource("11_g7k56")
+
+[node name="Parrlax3" type="Sprite2D" parent="Clouds"]
+material = ExtResource("5_7ya3m")
+position = Vector2(-192.333, 14)
+scale = Vector2(-1, 1)
+texture = ExtResource("11_g7k56")
+
+[node name="Parrlax4" type="Sprite2D" parent="Clouds"]
+material = ExtResource("5_7ya3m")
+position = Vector2(90.3333, -2.66666)
+texture = ExtResource("11_g7k56")
+
+[node name="Parrlax5" type="Sprite2D" parent="Clouds"]
+material = ExtResource("5_7ya3m")
+position = Vector2(155.333, 1.66667)
+texture = ExtResource("11_g7k56")
+
+[node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
+material = ExtResource("12_a78bs")
+position = Vector2(292, 337)
+scale = Vector2(30, 30)
+texture = ExtResource("3_y5oi0")
+script = ExtResource("4_jaxkp")
+Attached = NodePath("../CharacterBody2D")
+
+[connection signal="body_entered" from="CrashedShip/Area2D" to="CrashedShip" method="OnBodyEntered"]
+[connection signal="body_exited" from="CrashedShip/Area2D" to="CrashedShip" method="OnBodyExited"]
