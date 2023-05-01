@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhlsdvcjhnpmb"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="1_6rpei"]
-[ext_resource type="Script" path="res://assets/prefabs/Interface/GeneralUI.cs" id="1_f1k6m"]
+[ext_resource type="Script" path="res://assets/scripts/GeneralUI.cs" id="1_f1k6m"]
 [ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="2_rhgmc"]
-[ext_resource type="Script" path="res://assets/prefabs/Interface/MissionIndicator.cs" id="4_jlim0"]
+[ext_resource type="Script" path="res://assets/scripts/MissionIndicator.cs" id="4_jlim0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uums2"]
 font = ExtResource("1_6rpei")

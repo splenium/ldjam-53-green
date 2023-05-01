@@ -39,7 +39,7 @@ public partial class GameManager : Node
 
     // Called when the node enters the scene tree for the first time.
 
-    private int _startCash = 300;
+    private int _startCash = 200;
 	public override void _Ready()
 	{
 		this.NewGame();

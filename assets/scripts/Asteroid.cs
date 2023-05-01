@@ -3,8 +3,6 @@ using System;
 
 public partial class Asteroid : Area2D
 {
-    [Export]
-    private AsteroidSize _size = AsteroidSize.Large;
 
     private CanvasLayer _canvasLayer;
 
