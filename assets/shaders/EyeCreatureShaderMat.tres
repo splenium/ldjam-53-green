@@ -3,4 +3,5 @@
 [ext_resource type="Shader" path="res://assets/shaders/EyeCreature.gdshader" id="1_8j52g"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_8j52g")

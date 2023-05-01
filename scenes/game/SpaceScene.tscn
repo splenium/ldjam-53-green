@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bj2fxobj3bb66" path="res://assets/sprites/UglyThingThree.png" id="5_ka280"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="6_2dmg6"]
 [ext_resource type="Texture2D" uid="uid://d4gij6cxgmcpd" path="res://assets/sprites/UglyThingFour.png" id="6_64dne"]
-[ext_resource type="PackedScene" uid="uid://b45ibahn07bkt" path="res://assets/prefabs/indicator.tscn" id="12_82hjb"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/indicator.tscn" id="12_82hjb"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1
