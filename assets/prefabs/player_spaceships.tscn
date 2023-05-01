@@ -5,8 +5,9 @@
 [ext_resource type="Material" uid="uid://dxbppkxcgncvj" path="res://assets/shaders/ReactorShaderMat.tres" id="3_52u8t"]
 [ext_resource type="Texture2D" uid="uid://c43amj08nl377" path="res://assets/sprites/Crate.png" id="4_ukhjc"]
 
-[node name="PlayerSpaceships" type="CharacterBody2D"]
+[node name="PlayerSpaceships" type="CharacterBody2D" node_paths=PackedStringArray("IndicatorContainer")]
 script = ExtResource("1_wmr7x")
+IndicatorContainer = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

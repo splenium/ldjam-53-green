@@ -1,7 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bnvn1aqkfnf8h"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://1s5f0i1a1ql"]
 
 [ext_resource type="Shader" path="res://assets/shaders/Planet.gdshader" id="1_4piae"]
 
 [resource]
-render_priority = 0
+resource_local_to_scene = true
 shader = ExtResource("1_4piae")
+shader_parameter/colorA = Color(0, 0.714, 0.565, 1)
+shader_parameter/colorB = Color(0.42, 0.243, 0.584, 1)

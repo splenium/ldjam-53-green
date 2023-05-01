@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://be6v8uu06s4ve"]
+[gd_scene load_steps=19 format=3 uid="uid://be6v8uu06s4ve"]
 
 [ext_resource type="Script" path="res://assets/scripts/AsteroidsManager.cs" id="1_o733m"]
+[ext_resource type="PackedScene" uid="uid://cnt42u1esyvyr" path="res://assets/prefabs/sun.tscn" id="1_s4uyw"]
 [ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="2_3onkj"]
 [ext_resource type="PackedScene" uid="uid://bfe1k0va6oc0" path="res://assets/prefabs/Asteroids/Asteroid1.tscn" id="2_briab"]
 [ext_resource type="PackedScene" uid="uid://qduhgkf7ayou" path="res://assets/prefabs/SpacePlanet.tscn" id="2_lvf8k"]
@@ -15,8 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bj2fxobj3bb66" path="res://assets/sprites/UglyThingThree.png" id="5_ka280"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="6_2dmg6"]
 [ext_resource type="Texture2D" uid="uid://d4gij6cxgmcpd" path="res://assets/sprites/UglyThingFour.png" id="6_64dne"]
+[ext_resource type="Script" path="res://assets/scripts/Indicator.cs" id="8_6mxjw"]
+[ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="9_mcoj0"]
 
 [node name="World" type="Node2D"]
+texture_filter = 1
 
 [node name="Asteroids" type="Node" parent="." node_paths=PackedStringArray("spawnTimer", "playerSpaceships")]
 script = ExtResource("1_o733m")
@@ -25,7 +29,7 @@ spawnTimer = NodePath("AsteroidsTimer")
 playerSpaceships = NodePath("../PlayerSpaceships")
 
 [node name="AsteroidsTimer" type="Timer" parent="Asteroids"]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [node name="PlanetContainer" type="Node2D" parent="." node_paths=PackedStringArray("Player", "PlanetContainter")]
@@ -36,26 +40,54 @@ PlanetContainter = NodePath(".")
 [node name="Fecaloria" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
 position = Vector2(514, -452)
 PlanetTexture = ExtResource("2_3onkj")
+ColorA = Color(0.376471, 0.729412, 0.486275, 1)
+ColorB = Color(0.282353, 0, 0.364706, 1)
 
 [node name="Odorix" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
 position = Vector2(1370, 925)
 PlanetId = 1
+ColorA = Color(0.964706, 0.690196, 0, 1)
+ColorB = Color(0.913725, 0.376471, 0.0666667, 1)
 
 [node name="Etronis" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
 position = Vector2(-870, 2082)
 PlanetId = 2
 PlanetTexture = ExtResource("5_ka280")
+ColorA = Color(1, 0.12549, 0.27451, 1)
+ColorB = Color(0.0392157, 0.12549, 0.0627451, 1)
 
 [node name="Porcelainus" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
 position = Vector2(1131, -9)
 PlanetId = 3
 PlanetTexture = ExtResource("6_64dne")
+ColorA = Color(0.329412, 0.521569, 0.972549, 1)
+ColorB = Color(0.0196078, 0.172549, 0.2, 1)
 
-[node name="PlayerSpaceships" parent="." instance=ExtResource("2_rand8")]
+[node name="PlayerSpaceships" parent="." node_paths=PackedStringArray("PlanetContainer", "IndicatorContainer") instance=ExtResource("2_rand8")]
 position = Vector2(576, 326)
 scale = Vector2(2, 2)
+PlanetContainer = NodePath("../PlanetContainer")
+IndicatorContainer = NodePath("IndicatorContainer2")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpaceships"]
+
+[node name="IndicatorContainer2" type="Node2D" parent="PlayerSpaceships"]
+
+[node name="Indicator" type="Node2D" parent="PlayerSpaceships/IndicatorContainer2" node_paths=PackedStringArray("planet", "rocket")]
+script = ExtResource("8_6mxjw")
+planet = NodePath("../../../PlanetContainer/Porcelainus")
+rocket = NodePath("../..")
+
+[node name="SpriteIndicator" type="Sprite2D" parent="PlayerSpaceships/IndicatorContainer2/Indicator"]
+texture_filter = 1
+texture = ExtResource("9_mcoj0")
+
+[node name="Sun" parent="." instance=ExtResource("1_s4uyw")]
+offset_left = -1998.0
+offset_top = -1139.0
+offset_right = -1958.0
+offset_bottom = -1099.0
+scale = Vector2(105.887, 105.887)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

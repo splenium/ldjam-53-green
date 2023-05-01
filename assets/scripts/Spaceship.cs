@@ -8,9 +8,22 @@ public partial class Spaceship : CharacterBody2D
 
     private GameManager _gameManager;
 
+    [Export]
+    private Node2D PlanetContainer;
+    [Export]
+    private Node2D IndicatorContainer;
+
+
+
     public override void _Ready()
     {
+
         _gameManager = GetNode<GameManager>("/root/GameManager");
+    }
+
+    private void RegenIndicator()
+    {
+
     }
 
     public override void _PhysicsProcess(double delta)
