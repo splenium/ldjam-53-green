@@ -26,5 +26,8 @@ public partial class Spaceship : CharacterBody2D
         }
         MoveAndSlide();
     }
+
+    // Add death element :
+
  
 }

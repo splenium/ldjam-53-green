@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="4_gnbrj"]
 [ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="5_y6l0u"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
-[ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="5_yljjc"]
+[ext_resource type="Material" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="5_yljjc"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="7_wgvx4"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="8_137h0"]
 [ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="11_b7ryp"]

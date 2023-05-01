@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6cy8jylrmari"]
+[gd_scene load_steps=10 format=3 uid="uid://b6cy8jylrmari"]
 
 [ext_resource type="Script" path="res://assets/scripts/AsteroidsManager.cs" id="1_5echd"]
 [ext_resource type="PackedScene" uid="uid://cg8p0u0o3h3xx" path="res://assets/prefabs/player_spaceships.tscn" id="2_eweg3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="6_5vcou"]
 [ext_resource type="Texture2D" uid="uid://d1ek80hsabyb3" path="res://assets/sprites/Ui/TimerHorizontal.png" id="6_ldoef"]
 [ext_resource type="Script" path="res://scenes/ProgressBar.cs" id="8_w385x"]
+[ext_resource type="PackedScene" uid="uid://dte4yudkm2hfv" path="res://assets/prefabs/mission_failled_screen.tscn" id="9_1ne6x"]
 
 [node name="World" type="Node2D"]
 
@@ -75,5 +76,7 @@ script = ExtResource("8_w385x")
 _delivryTimer = NodePath("../../DelivryTimer")
 
 [node name="GeneralUI" parent="HUD" instance=ExtResource("6_5vcou")]
+
+[node name="MissionFailledScreen" parent="HUD" instance=ExtResource("9_1ne6x")]
 
 [connection signal="timeout" from="Asteroids/AsteroidsTimer" to="Asteroids" method="_on_asteroids_timer_timeout"]
