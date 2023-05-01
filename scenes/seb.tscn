@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_2xw6m"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
-[ext_resource type="PackedScene" uid="uid://bieuufe5cdqcl" path="res://assets/prefabs/EyeCreature.tscn" id="3_u08m6"]
+[ext_resource type="PackedScene" uid="uid://ctktedndbalwf" path="res://assets/prefabs/EyeCreature.tscn" id="3_u08m6"]
 [ext_resource type="PackedScene" uid="uid://8yi58elmr10y" path="res://assets/floating_pilar.tscn" id="4_0ouix"]
 [ext_resource type="Script" path="res://assets/scripts/TreeVariation.cs" id="5_j3enw"]
 [ext_resource type="Material" uid="uid://dehqsyafejri" path="res://assets/shaders/TreeShaderMat.tres" id="5_y81vy"]
