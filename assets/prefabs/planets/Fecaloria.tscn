@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://chklyrlwka1ka"]
+[gd_scene load_steps=24 format=3 uid="uid://cnrwg7iptsy06"]
 
 [ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
-[ext_resource type="Script" path="res://assets/prefabs/planets/GroundPlanet.cs" id="1_xxo2e"]
+[ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_xxo2e"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_togc3"]
 [ext_resource type="Script" path="res://scenes/game/Follow.cs" id="3_643s2"]
-[ext_resource type="Material" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
+[ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
 [ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="5_w7ju1"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="6_8mxgf"]
 [ext_resource type="PackedScene" uid="uid://bwele1coowneo" path="res://assets/prefabs/rocket.tscn" id="7_3kwib"]
@@ -13,7 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="13_fdo4j"]
 [ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="14_g7ki8"]
 [ext_resource type="PackedScene" uid="uid://c7spf4e7lq8x7" path="res://assets/prefabs/NPC/alien.tscn" id="15_ilccn"]
+[ext_resource type="Texture2D" uid="uid://cqxujenx4x737" path="res://assets/sprites/PanelDirection.png" id="15_ruqex"]
+[ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="16_xqsqf"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="17_tsml0"]
+[ext_resource type="Material" path="res://assets/shaders/ReactorShaderMat.tres" id="18_j3dvw"]
+[ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="19_d3och"]
 
 [sub_resource type="Gradient" id="Gradient_hk26n"]
 offsets = PackedFloat32Array(0)
@@ -24,6 +29,9 @@ gradient = SubResource("Gradient_hk26n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
 size = Vector2(739, 145.558)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqf5p"]
+font = ExtResource("17_tsml0")
 
 [node name="Fecaloria" type="Node2D"]
 texture_filter = 1
@@ -41,13 +49,25 @@ texture = ExtResource("2_togc3")
 script = ExtResource("3_643s2")
 Attached = NodePath("../CharacterBody2D")
 
-[node name="Parrlax1" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_8mxgf")
+Speed = 0.5
+
+[node name="Parrlax1" type="Sprite2D" parent="Node2D"]
+material = ExtResource("4_y8m1f")
+position = Vector2(292, 605)
+scale = Vector2(-3, 2)
+texture = ExtResource("5_w7ju1")
+
+[node name="Node2D2" type="Node2D" parent="."]
+script = ExtResource("6_8mxgf")
+Speed = 0.75
+
+[node name="Parrlax1" type="Sprite2D" parent="Node2D2"]
 material = ExtResource("4_y8m1f")
 position = Vector2(289, 518)
 scale = Vector2(3, 3)
 texture = ExtResource("5_w7ju1")
-script = ExtResource("6_8mxgf")
-Speed = 0.5
 
 [node name="Rocket" parent="." instance=ExtResource("7_3kwib")]
 
@@ -63,7 +83,7 @@ gravity = 100.0
 offset = Vector2(0, -150)
 
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
-position = Vector2(618, 560)
+position = Vector2(1781, 561)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
 rewards = PackedInt32Array(15, 25, 30)
@@ -124,6 +144,7 @@ position = Vector2(155.333, 1.66667)
 texture = ExtResource("14_g7ki8")
 
 [node name="Alien" parent="." instance=ExtResource("15_ilccn")]
+position = Vector2(-527, 508)
 
 [node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
 material = ExtResource("17_ooarg")
@@ -132,3 +153,32 @@ scale = Vector2(30, 30)
 texture = ExtResource("2_togc3")
 script = ExtResource("3_643s2")
 Attached = NodePath("../CharacterBody2D")
+
+[node name="Panel" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(124, 344)
+texture = ExtResource("15_ruqex")
+script = ExtResource("16_xqsqf")
+Speed = 4.0
+Amplitude = 0.05
+
+[node name="Label" type="Label" parent="Panel/Sprite2D"]
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "Mission"
+label_settings = SubResource("LabelSettings_pqf5p")
+
+[node name="thruster" type="Sprite2D" parent="Panel/Sprite2D"]
+material = ExtResource("18_j3dvw")
+position = Vector2(-56, 3)
+scale = Vector2(1.12, 2.12)
+texture = ExtResource("19_d3och")
+
+[node name="thruster2" type="Sprite2D" parent="Panel/Sprite2D"]
+material = ExtResource("18_j3dvw")
+position = Vector2(56, 3)
+scale = Vector2(1.32, 2.24)
+texture = ExtResource("19_d3och")

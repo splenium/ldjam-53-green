@@ -46,7 +46,7 @@ public partial class Actor : Area2D
     {
         if(this.MissionIsForMe())
         {
-            this.deliveryLabel.Text = "E - Give package";
+            this.deliveryLabel.Text = "E  -  Give   package";
         } else
         {
             this.deliveryLabel.Text = "Nothing  to  deliver";
