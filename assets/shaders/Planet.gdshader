@@ -1,4 +1,5 @@
 shader_type canvas_item;
+
 #define sat(a) clamp(a, 0., 1.)
 
 uniform vec4 colorA: source_color = vec4(0.000,0.714,0.565,1.);

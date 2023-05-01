@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg8p0u0o3h3xx"]
+[gd_scene load_steps=5 format=3 uid="uid://cg8p0u0o3h3xx"]
 
 [ext_resource type="Script" path="res://assets/scripts/Spaceship.cs" id="1_wmr7x"]
 [ext_resource type="Texture2D" uid="uid://by6w54irxl4gt" path="res://assets/sprites/space/Ship.png" id="2_xbbne"]
+[ext_resource type="Material" uid="uid://dxbppkxcgncvj" path="res://assets/shaders/ReactorShaderMat.tres" id="3_52u8t"]
+[ext_resource type="Texture2D" uid="uid://c43amj08nl377" path="res://assets/sprites/Crate.png" id="4_ukhjc"]
 
 [node name="PlayerSpaceships" type="CharacterBody2D"]
 script = ExtResource("1_wmr7x")
@@ -13,3 +15,9 @@ texture = ExtResource("2_xbbne")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(10.5, -18, 10.5, -15.7, 13.5, -11.7, 13.5, 5.3, 18.5, 11.3, 18.5, 16.5, 19.5, 18.5, 19.5, 21, 17.3, 21, 15, 23.4, 12.5, 22.3, 12.5, 20.8, 7.7, 16, -6.7, 16, -13.7, 23, -16.3, 23, -19.5, 19.8, -19.5, 16.5, -13.5, 5.4, -13.5, -13, -11.5, -13, -3.5, -23.7, -3.5, -25.2, -1.3, -26.3)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = ExtResource("3_52u8t")
+position = Vector2(0, 19)
+scale = Vector2(6.47529, 6.47529)
+texture = ExtResource("4_ukhjc")
