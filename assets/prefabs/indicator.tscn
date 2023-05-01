@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b45ibahn07bkt"]
+
+[ext_resource type="Script" path="res://assets/scripts/Indicator.cs" id="1_c5riu"]
+[ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="2_xc5n1"]
+
+[node name="Indicator" type="Node2D" node_paths=PackedStringArray("planet", "rocket")]
+script = ExtResource("1_c5riu")
+planet = NodePath("../../../PlanetContainer/Porcelainus")
+rocket = NodePath("../..")
+
+[node name="SpriteIndicator" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_xc5n1")

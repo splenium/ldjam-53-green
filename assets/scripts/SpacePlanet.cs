@@ -57,7 +57,7 @@ public partial class SpacePlanet : Node2D
 	{
 		CharacterBody2D c = node as CharacterBody2D;
 		bool finalMissionActive = _gameManager.IsFinalMission();
-		if(c != null && ((!finalMissionActive && !isFinalPlanet()) || (finalMissionActive && isFinalPlanet()))) // Final Conditon for planet entrance
+		if(c != null && _gameManager.CanLandOnPlanet(PlanetId)) // Final Conditon for planet entrance
 		{
 			LandingLabel.Visible = visible;
 		}
