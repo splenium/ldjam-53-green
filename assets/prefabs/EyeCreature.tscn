@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bieuufe5cdqcl"]
+[gd_scene load_steps=4 format=3 uid="uid://ctktedndbalwf"]
 
 [ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="1_0k7ye"]
 [ext_resource type="Material" uid="uid://cq1m0ioq81id3" path="res://assets/shaders/EyeCreatureShaderMat.tres" id="2_pxlt1"]

@@ -4,7 +4,6 @@ using System;
 
 public partial class GameManager : Node
 {
-	public static string STRING_NULL = "[[STRING_NULL]]";
 	// All these attribute are for Mission:
 	private string _missionName;
 	private int _missionReward;
@@ -51,6 +50,7 @@ public partial class GameManager : Node
 		this.PlanetPosition = 0;
 		this.MustShowCreditsFirst = false;
 		this.IsDeath = false;
+		this.ClearMission();
 	}
 
 	public bool TimeForTheLastTravel()
@@ -95,7 +95,7 @@ public partial class GameManager : Node
 
     public bool MissionInProgress()
     {
-        return _missionName != STRING_NULL;
+        return _missionName != null;
     }
 
     public int MissionReward()
@@ -131,7 +131,7 @@ public partial class GameManager : Node
 
 	private void ClearMission()
 	{
-		_missionName = STRING_NULL;
+		_missionName = null;
 	}
 
 	public void AbortTheMission()
