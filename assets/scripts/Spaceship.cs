@@ -60,7 +60,7 @@ public partial class Spaceship : CharacterBody2D
         }
         else
         {
-            Vector2 input_vector = new(0, -Input.GetActionStrength("forward"));
+            Vector2 input_vector = new Vector2(0, -Input.GetActionStrength("forward"));
             
             Velocity += input_vector.Rotated(Rotation) * _acceleration;
             Velocity = Velocity.LimitLength(_maxSpeed);

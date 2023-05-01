@@ -146,7 +146,7 @@ gravity = 100.0
 offset = Vector2(0, -150)
 
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
-position = Vector2(1781, 561)
+position = Vector2(1265.94, 586.984)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
 rewards = PackedInt32Array(15, 25, 30)
@@ -207,7 +207,7 @@ position = Vector2(155.333, 1.66667)
 texture = ExtResource("14_g7ki8")
 
 [node name="Alien" parent="." instance=ExtResource("15_ilccn")]
-position = Vector2(-527, 508)
+position = Vector2(87.8568, 525.092)
 
 [node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
 material = ExtResource("17_ooarg")
