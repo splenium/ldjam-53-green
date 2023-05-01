@@ -11,13 +11,14 @@ radius = 19.0
 font = ExtResource("3_t7l36")
 font_size = 14
 
-[node name="Alien" type="Area2D" node_paths=PackedStringArray("deliveryLabel", "labelName")]
+[node name="Alien" type="Area2D" node_paths=PackedStringArray("deliveryLabel", "labelName", "Interface")]
 position = Vector2(-365, 545)
 scale = Vector2(4, 4)
 script = ExtResource("1_m2joo")
 _name = "[Troupix]"
-deliveryLabel = NodePath("DeliveryLabel")
-labelName = NodePath("Name")
+deliveryLabel = NodePath("Interface/DeliveryLabel")
+labelName = NodePath("Interface/Name")
+Interface = NodePath("Interface")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_aog0y")
@@ -25,10 +26,12 @@ texture = ExtResource("2_aog0y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_slkfj")
 
-[node name="Name" type="Label" parent="."]
+[node name="Interface" type="Node2D" parent="."]
+
+[node name="Name" type="Label" parent="Interface"]
 offset_left = -16.0
 offset_top = -28.5
-offset_right = 44.0
+offset_right = 47.0
 offset_bottom = -2.5
 scale = Vector2(0.5, 0.5)
 text = "[Troupix]"
@@ -36,7 +39,7 @@ label_settings = SubResource("LabelSettings_f1gea")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DeliveryLabel" type="Label" parent="."]
+[node name="DeliveryLabel" type="Label" parent="Interface"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
