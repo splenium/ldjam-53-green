@@ -31,7 +31,7 @@ public partial class Asteroid : Area2D
         _gameManager = GetNode<GameManager>("/root/GameManager");
 
         Rotation = (float)GD.RandRange(0, 2d * MathF.PI);
-        speed = GD.RandRange(50, 100);
+        speed = GD.RandRange(50, 200);
         //switch (_size)
         //{
         //    case AsteroidSize.Large:
