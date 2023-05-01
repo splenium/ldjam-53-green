@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfcvq1gpo13wk"]
+
+[ext_resource type="Script" path="res://assets/scripts/LandscapeRocket.cs" id="1_at4fx"]
+[ext_resource type="Texture2D" uid="uid://by6w54irxl4gt" path="res://assets/sprites/space/Ship.png" id="2_3agjd"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_mlctp"]
+[ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="4_uswx4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjrl3"]
+radius = 124.064
+
+[sub_resource type="LabelSettings" id="LabelSettings_kydiw"]
+font = ExtResource("3_mlctp")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kieg"]
+font = ExtResource("3_mlctp")
+font_size = 20
+
+[node name="Rocket" type="Area2D" node_paths=PackedStringArray("InfoLabel", "costLabel")]
+position = Vector2(-28, 451)
+script = ExtResource("1_at4fx")
+InfoLabel = NodePath("InfoLabel")
+costLabel = NodePath("InfoLabel/MarginContainer/HBoxContainer2/CostLabel")
+
+[node name="RockIt" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_3agjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 88)
+shape = SubResource("CircleShape2D_pjrl3")
+
+[node name="InfoLabel" type="VBoxContainer" parent="."]
+offset_left = 73.0
+offset_top = -74.0
+offset_right = 202.0
+offset_bottom = -18.0
+
+[node name="Label" type="Label" parent="InfoLabel"]
+layout_mode = 2
+text = "E - Go in space"
+label_settings = SubResource("LabelSettings_kydiw")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoLabel"]
+layout_mode = 2
+theme_override_constants/margin_top = -10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InfoLabel/MarginContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="InfoLabel/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Cost:   10"
+label_settings = SubResource("LabelSettings_3kieg")
+
+[node name="MarginContainer2" type="MarginContainer" parent="InfoLabel/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -7
+
+[node name="TextureRect" type="TextureRect" parent="InfoLabel/MarginContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource("4_uswx4")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="." to="." method="OnBodyExited"]

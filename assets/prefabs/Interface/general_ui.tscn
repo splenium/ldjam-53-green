@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_uums2"]
 font = ExtResource("1_6rpei")
-font_size = 72
+font_size = 48
 
 [node name="GeneralUI" type="Control" node_paths=PackedStringArray("CashLabel")]
 texture_filter = 1
@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f1k6m")
-CashLabel = NodePath("TopRightContainer/Cash/Value/Label")
+CashLabel = NodePath("TopRightContainer/Cash/Value/CashLabel")
 
 [node name="TopRightContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -25,7 +25,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 13
 theme_override_constants/margin_right = 3
 
 [node name="Cash" type="HBoxContainer" parent="TopRightContainer"]
@@ -35,7 +35,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/margin_top = -2
 
-[node name="Label" type="Label" parent="TopRightContainer/Cash/Value"]
+[node name="CashLabel" type="Label" parent="TopRightContainer/Cash/Value"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "5"
@@ -46,7 +46,7 @@ vertical_alignment = 1
 [node name="Symbol" type="MarginContainer" parent="TopRightContainer/Cash"]
 layout_mode = 2
 theme_override_constants/margin_left = -6
-theme_override_constants/margin_top = -11
+theme_override_constants/margin_top = -19
 
 [node name="TextureRect" type="TextureRect" parent="TopRightContainer/Cash/Symbol"]
 custom_minimum_size = Vector2(20, 20)

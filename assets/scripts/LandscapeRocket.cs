@@ -4,7 +4,7 @@ using System;
 public partial class LandscapeRocket : Area2D
 {
     [Export]
-    private Control jumpToSpace;
+    private Control InfoLabel;
     [Export]
     private Label costLabel;
     [Export]
@@ -14,7 +14,7 @@ public partial class LandscapeRocket : Area2D
     public override void _Ready()
 	{
         _gameManager = GetNode<GameManager>("/root/GameManager");
-        this.jumpToSpace.Visible = false;
+        this.InfoLabel.Visible = false;
         this.costLabel.Text = "Cost:   " + GoingSpaceCost.ToString();
     }
 
@@ -26,11 +26,11 @@ public partial class LandscapeRocket : Area2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (Input.IsActionJustReleased("mission_one") && this.jumpToSpace.Visible && CanGoInSpace())
+        if (Input.IsActionJustReleased("mission_one") && this.InfoLabel.Visible && CanGoInSpace())
         {
-            this.jumpToSpace.Visible = false;
+            this.InfoLabel.Visible = false;
             _gameManager.Pay(GoingSpaceCost);
-            _gameManager.LoadScene("res://scenes/spaceship.tscn");
+            _gameManager.GoInSpace();
         }
     }
 
@@ -39,7 +39,7 @@ public partial class LandscapeRocket : Area2D
         CharacterBody2D c = collided as CharacterBody2D;
         if (c != null)
         {
-            this.jumpToSpace.Visible = visible;
+            this.InfoLabel.Visible = visible;
         }
     }
 

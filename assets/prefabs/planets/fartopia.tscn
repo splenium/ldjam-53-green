@@ -1,0 +1,131 @@
+[gd_scene load_steps=17 format=3 uid="uid://bk6dvpgttw10i"]
+
+[ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
+[ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_togc3"]
+[ext_resource type="Script" path="res://scenes/game/Follow.cs" id="3_643s2"]
+[ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
+[ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="5_w7ju1"]
+[ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="6_8mxgf"]
+[ext_resource type="PackedScene" uid="uid://bfcvq1gpo13wk" path="res://assets/prefabs/rocket.tscn" id="7_3kwib"]
+[ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="11_22e4q"]
+[ext_resource type="PackedScene" uid="uid://drcvavequkx5s" path="res://assets/prefabs/Box.tscn" id="12_rhght"]
+[ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="13_fdo4j"]
+[ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="14_g7ki8"]
+[ext_resource type="PackedScene" uid="uid://c7spf4e7lq8x7" path="res://assets/prefabs/NPC/alien.tscn" id="15_ilccn"]
+[ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
+
+[sub_resource type="Gradient" id="Gradient_hk26n"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xuyba"]
+gradient = SubResource("Gradient_hk26n")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
+size = Vector2(739, 145.558)
+
+[node name="Fartopia" type="Node2D"]
+texture_filter = 1
+
+[node name="Backbackground" type="Sprite2D" parent="."]
+scale = Vector2(51000, 51000)
+texture = SubResource("GradientTexture1D_xuyba")
+
+[node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
+material = ExtResource("1_6okic")
+position = Vector2(282, 345)
+scale = Vector2(30, 30)
+texture = ExtResource("2_togc3")
+script = ExtResource("3_643s2")
+Attached = NodePath("../CharacterBody2D")
+
+[node name="Parrlax1" type="Sprite2D" parent="."]
+material = ExtResource("4_y8m1f")
+position = Vector2(289, 518)
+scale = Vector2(3, 3)
+texture = ExtResource("5_w7ju1")
+script = ExtResource("6_8mxgf")
+Speed = 0.5
+
+[node name="Rocket" parent="." instance=ExtResource("7_3kwib")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("11_22e4q")]
+position = Vector2(298, 518)
+scale = Vector2(4, 4)
+wall_min_slide_angle = 1.34739
+floor_stop_on_slope = true
+floor_constant_speed = true
+gravity = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -150)
+
+[node name="Box" parent="." instance=ExtResource("12_rhght")]
+position = Vector2(618, 560)
+labels = PackedStringArray("Report the letter to Aliatrox", "Send Gift to the world of the incredible Bibobux")
+rewards = PackedInt32Array(10, 25)
+keys = PackedStringArray("E", "R")
+planetTarget = PackedInt32Array(0, 1)
+
+[node name="Landscape01" parent="." instance=ExtResource("13_fdo4j")]
+position = Vector2(546, 625)
+
+[node name="Landscape02" parent="." instance=ExtResource("13_fdo4j")]
+position = Vector2(-598, 625)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Landscape03" parent="." instance=ExtResource("13_fdo4j")]
+position = Vector2(1875, 625)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="LandscapeBorder" type="StaticBody2D" parent="."]
+position = Vector2(12, 7)
+
+[node name="BorderLeft" type="CollisionShape2D" parent="LandscapeBorder"]
+position = Vector2(-992, 422)
+scale = Vector2(1, 8.24)
+shape = SubResource("RectangleShape2D_4qsty")
+
+[node name="BorderRight" type="CollisionShape2D" parent="LandscapeBorder"]
+position = Vector2(2195, 330)
+scale = Vector2(1, 8.24)
+shape = SubResource("RectangleShape2D_4qsty")
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2(289, 111)
+rotation = 3.14159
+scale = Vector2(3, -3)
+script = ExtResource("6_8mxgf")
+Speed = -0.5
+
+[node name="Parrlax2" type="Sprite2D" parent="Clouds"]
+material = ExtResource("4_y8m1f")
+texture = ExtResource("14_g7ki8")
+
+[node name="Parrlax3" type="Sprite2D" parent="Clouds"]
+material = ExtResource("4_y8m1f")
+position = Vector2(-192.333, 14)
+scale = Vector2(-1, 1)
+texture = ExtResource("14_g7ki8")
+
+[node name="Parrlax4" type="Sprite2D" parent="Clouds"]
+material = ExtResource("4_y8m1f")
+position = Vector2(90.3333, -2.66666)
+texture = ExtResource("14_g7ki8")
+
+[node name="Parrlax5" type="Sprite2D" parent="Clouds"]
+material = ExtResource("4_y8m1f")
+position = Vector2(155.333, 1.66667)
+texture = ExtResource("14_g7ki8")
+
+[node name="Alien" parent="." instance=ExtResource("15_ilccn")]
+
+[node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
+material = ExtResource("17_ooarg")
+position = Vector2(292, 337)
+scale = Vector2(30, 30)
+texture = ExtResource("2_togc3")
+script = ExtResource("3_643s2")
+Attached = NodePath("../CharacterBody2D")

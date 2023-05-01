@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://be6v8uu06s4ve"]
+
+[ext_resource type="Script" path="res://assets/scripts/AsteroidsManager.cs" id="1_o733m"]
+[ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="2_3onkj"]
+[ext_resource type="PackedScene" uid="uid://qduhgkf7ayou" path="res://assets/prefabs/SpacePlanet.tscn" id="2_lvf8k"]
+[ext_resource type="PackedScene" uid="uid://cg8p0u0o3h3xx" path="res://assets/prefabs/player_spaceships.tscn" id="2_rand8"]
+[ext_resource type="Script" path="res://assets/scripts/SpacePlayerSpawner.cs" id="2_yos2o"]
+[ext_resource type="Texture2D" uid="uid://b8cmaddh4yk3" path="res://assets/sprites/space/parallax/Stars Small_1.png" id="3_1d7se"]
+[ext_resource type="Texture2D" uid="uid://dug0r3ayyidr7" path="res://assets/sprites/space/parallax/Nebula Blue.png" id="4_hsvpi"]
+[ext_resource type="Texture2D" uid="uid://f0ndknxpegy0" path="res://assets/sprites/space/parallax/Stars-Big_1_2_PC.png" id="5_b7vik"]
+[ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="6_2dmg6"]
+
+[node name="World" type="Node2D"]
+
+[node name="Asteroids" type="Node" parent="." node_paths=PackedStringArray("spawnTimer", "playerSpaceships")]
+script = ExtResource("1_o733m")
+spawnTimer = NodePath("AsteroidsTimer")
+playerSpaceships = NodePath("../PlayerSpaceships")
+
+[node name="AsteroidsTimer" type="Timer" parent="Asteroids"]
+wait_time = 0.5
+autostart = true
+
+[node name="PlanetContainer" type="Node2D" parent="." node_paths=PackedStringArray("Player", "PlanetContainter")]
+script = ExtResource("2_yos2o")
+Player = NodePath("../PlayerSpaceships")
+PlanetContainter = NodePath(".")
+
+[node name="Fecaloria" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
+position = Vector2(514, -452)
+PlanetTexture = ExtResource("2_3onkj")
+
+[node name="PlanetQuiPue" parent="PlanetContainer" instance=ExtResource("2_lvf8k")]
+position = Vector2(1370, 925)
+PlanetId = 1
+
+[node name="PlayerSpaceships" parent="." instance=ExtResource("2_rand8")]
+position = Vector2(576, 326)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSpaceships"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroudStars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(4096, 4096)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BackgroudStars"]
+texture = ExtResource("3_1d7se")
+centered = false
+
+[node name="Nebula" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(4096, 4096)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nebula"]
+modulate = Color(1, 1, 1, 0.8)
+texture = ExtResource("4_hsvpi")
+centered = false
+
+[node name="ForegroundStars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(4096, 4096)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ForegroundStars"]
+texture = ExtResource("5_b7vik")
+centered = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 41.0
+offset_bottom = 27.0
+
+[node name="GeneralUI" parent="HUD" instance=ExtResource("6_2dmg6")]
+
+[connection signal="timeout" from="Asteroids/AsteroidsTimer" to="Asteroids" method="_on_asteroids_timer_timeout"]
