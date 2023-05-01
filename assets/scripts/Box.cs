@@ -21,19 +21,24 @@ public partial class Box : Area2D
     private string[] keys;
     [Export]
     private int[] planetTarget;
+    public PackedScene MissionPrefabs;
 
 
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+        MissionPrefabs = (PackedScene) ResourceLoader.Load("res://assets/prefabs/Mission/Mission.tscn");
         MissionSelection.Visible = false;
         _gameManager = GetNode<GameManager>("/root/GameManager");
 
         for (int i = 0; i < labels.Length; i++)
         {
+            var missionComponent = MissionPrefabs.Instantiate();
+            MissionSelection.AddChild(missionComponent);
             this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], this.MissionSelection.GetChildren()[i]);
         }
+
     }
 
     private void SetMission(string label, int reward, string key, int planetTarget, Node node)
@@ -55,6 +60,9 @@ public partial class Box : Area2D
             else if (Input.IsActionPressed("mission_two"))
             {
                 this.ChoiceDone(1);
+            } else if (Input.IsActionPressed("mission_three"))
+            {
+                this.ChoiceDone(2);
             }
         }
     }
@@ -74,6 +82,10 @@ public partial class Box : Area2D
     }
 
     private bool MissionIsPossible(int i) {
+        if(i >= MissionSelection.GetChildren().Count) 
+        {
+            return false;
+        }
         Mission m = GetMission(i);
         if(m != null)
         {

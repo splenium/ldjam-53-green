@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://drcvavequkx5s"]
+[gd_scene load_steps=4 format=3 uid="uid://drcvavequkx5s"]
 
 [ext_resource type="Script" path="res://assets/scripts/Box.cs" id="1_ddd5g"]
 [ext_resource type="Texture2D" uid="uid://c43amj08nl377" path="res://assets/sprites/Crate.png" id="2_vmhxc"]
-[ext_resource type="PackedScene" uid="uid://bl2qylnad02qo" path="res://assets/prefabs/Mission/Mission.tscn" id="3_rpgq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r3ij"]
 radius = 83.006
@@ -26,12 +25,6 @@ offset_top = -192.0
 offset_right = 115.0
 offset_bottom = -107.0
 size_flags_horizontal = 3
-
-[node name="MarginContainer" parent="MissionList" instance=ExtResource("3_rpgq3")]
-layout_mode = 2
-
-[node name="MarginContainer2" parent="MissionList" instance=ExtResource("3_rpgq3")]
-layout_mode = 2
 
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="." to="." method="OnBodyExited"]
