@@ -17,7 +17,7 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_gxcj8"]
 font = ExtResource("3_gyxvx")
 
-[node name="Mission" type="MarginContainer" node_paths=PackedStringArray("labelMission", "labelCash", "key")]
+[node name="Mission" type="MarginContainer" node_paths=PackedStringArray("labelMission", "labelCash", "key", "DisableComponent")]
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
@@ -27,6 +27,7 @@ script = ExtResource("1_td2bv")
 labelMission = NodePath("MarginContainer2/HBoxContainer/MarginContainer/MissionLabel")
 labelCash = NodePath("MarginContainer2/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer/Label")
 key = NodePath("MarginContainer2/HBoxContainer/MarginContainer2/MarginContainer/KeyLabel")
+DisableComponent = NodePath("Disable")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
@@ -117,3 +118,7 @@ size_flags_vertical = 5
 texture = ExtResource("4_mwesq")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Disable" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.709804)

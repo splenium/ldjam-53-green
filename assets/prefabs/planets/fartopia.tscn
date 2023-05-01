@@ -60,8 +60,9 @@ gravity = 100.0
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -150)
 
-[node name="Box" parent="." instance=ExtResource("12_rhght")]
+[node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
 position = Vector2(618, 560)
+Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Report the letter to Aliatrox", "Send Gift to the world of the incredible Bibobux")
 rewards = PackedInt32Array(10, 25)
 keys = PackedStringArray("E", "R")

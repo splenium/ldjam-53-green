@@ -3,8 +3,12 @@ using System;
 
 public partial class GameManager : Node
 {
+	// All these attribute are for Mission:
+	private string _missionName;
+	private int _missionReward;
+	private int _missionPlanetTarget;
 
-	public Mission SelectedMission { get; set; }
+
 	public int cash { get; set; }
 	public int PlanetPosition { get; set; }
 	public string[] PlanetNames = new string[]
@@ -18,15 +22,14 @@ public partial class GameManager : Node
 
     // Called when the node enters the scene tree for the first time.
 
-    private int _startCash = 100;
+    private int _startCash = 0;
 	public override void _Ready()
 	{
 		this.newGame();
 	}
 
-	public void newGame()
+    public void newGame()
 	{
-		this.SelectedMission = null;
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
 	}
@@ -38,8 +41,9 @@ public partial class GameManager : Node
 
 	public void LoadMission(Mission mission)
 	{
-		this.SelectedMission = mission;
-
+		_missionName = mission.Name;
+		_missionPlanetTarget = mission.planetTarget;
+		_missionReward = mission.reward;
 	}
 
 	public void LandingOn(int planetId)
@@ -58,12 +62,39 @@ public partial class GameManager : Node
 		this.cash -= cost;
 	}
 
-	public void MissionSucces()
+	// ALL METHOD FOR MISSION CONTROL
+
+    public bool MissionInProgress()
+    {
+        return _missionName != null;
+    }
+
+    public int MissionReward()
+    {
+        return _missionReward;
+    }
+
+    public int MissionPlanetTarget()
+    {
+        return _missionPlanetTarget;
+    }
+
+    public void MissionSucces()
 	{
-		if(SelectedMission != null)
+		if(MissionInProgress())
 		{
-			this.cash += this.SelectedMission.reward;
-			this.SelectedMission = null;
+			this.cash += _missionReward;
+			ClearMission();
 		}
+	}
+
+	private void ClearMission()
+	{
+		_missionName = null;
+	}
+
+	public void AbortTheMission()
+	{
+		ClearMission();
 	}
 }

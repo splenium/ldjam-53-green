@@ -1,12 +1,16 @@
 using Godot;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Channels;
 
 public partial class Box : Area2D
 {
     [Export]
     private Control MissionSelection { get; set; }
+    [Export]
+    private LandscapeRocket Rocket;
     private GameManager _gameManager { get; set; }
 
     [Export]
@@ -25,7 +29,6 @@ public partial class Box : Area2D
 	{
         MissionSelection.Visible = false;
         _gameManager = GetNode<GameManager>("/root/GameManager");
-        _gameManager.SelectedMission = null;
 
         for (int i = 0; i < labels.Length; i++)
         {
@@ -65,16 +68,47 @@ public partial class Box : Area2D
         }
     }
 
+    private Mission GetMission(int i)
+    {
+        return MissionSelection.GetChildren()[i] as Mission;
+    }
+
+    private bool MissionIsPossible(int i) {
+        Mission m = GetMission(i);
+        if(m != null)
+        {
+            return m.planetTarget == _gameManager.PlanetPosition || _gameManager.cash >= Rocket.GoingSpaceCost;
+        }
+        return false;
+    }
+
     private void ChoiceDone(int choice)
 	{
-        MissionSelection.Visible = false;
-        this.StartMission(choice);
+        if(MissionIsPossible(choice))
+        {
+            MissionSelection.Visible = false;
+            this.StartMission(choice);
+        }
 	}
+
+    private void RefreshPossibleMission()
+    {
+        var missions = MissionSelection.GetChildren();
+        for (int i = 0; i < missions.Count; i++)
+        {
+            Mission m = missions[i] as Mission;
+            GD.Print(m.MissionLabel + ": " + MissionIsPossible(i).ToString());
+            if (m != null)
+            {
+               m.setDisable(MissionIsPossible(i));
+            }
+        }
+    }
 
 	private void SetMissionSelectVisible(bool visible, Node2D body)
 	{
         CharacterBody2D p = body as CharacterBody2D;
-		if (p != null && _gameManager.SelectedMission == null)
+		if (p != null && !_gameManager.MissionInProgress())
         {
             MissionSelection.Visible = visible;
         }
@@ -83,6 +117,7 @@ public partial class Box : Area2D
     private void OnBodyEntered(Node2D body)
 	{
 		this.SetMissionSelectVisible(true, body);
+        RefreshPossibleMission();
 	}
 
     private void OnBodyExited(Node2D body)

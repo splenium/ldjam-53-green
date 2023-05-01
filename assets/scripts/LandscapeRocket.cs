@@ -8,7 +8,7 @@ public partial class LandscapeRocket : Area2D
     [Export]
     private Label costLabel;
     [Export]
-    private int GoingSpaceCost = 10;
+    public int GoingSpaceCost = 10;
     private GameManager _gameManager { get; set; }
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

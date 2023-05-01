@@ -29,7 +29,7 @@ public partial class Actor : Area2D
 
     private bool MissionIsForMe()
     {
-        return _gameManager.SelectedMission != null && _gameManager.SelectedMission.planetTarget == _gameManager.PlanetPosition;
+        return _gameManager.MissionInProgress() && _gameManager.MissionPlanetTarget() == _gameManager.PlanetPosition;
     }
 
     public override void _Process(double delta)

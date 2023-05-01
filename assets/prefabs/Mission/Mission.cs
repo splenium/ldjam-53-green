@@ -14,6 +14,8 @@ public partial class Mission : MarginContainer
     private Label labelCash;
     [Export]
 	private Label key;
+	[Export]
+	private ColorRect DisableComponent;
 
     public void setNewMission(string missionLabel, string missionKey, int reward, int planetTarget)
 	{
@@ -27,4 +29,10 @@ public partial class Mission : MarginContainer
 		this.key.Text = missionKey;
 		this.labelCash.Text = "reward: " + reward.ToString();
 	}
+
+	public void setDisable(bool disable)
+	{
+		DisableComponent.Visible = !disable;
+
+    }
 }
