@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnyjo5gvbhg0p"]
+[gd_scene load_steps=12 format=3 uid="uid://dnyjo5gvbhg0p"]
 
 [ext_resource type="Script" path="res://assets/scripts/HandleMenu.cs" id="1_s81ax"]
 [ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="2_7mp18"]
@@ -9,13 +9,14 @@
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="7_0c80n"]
 [ext_resource type="AudioStream" uid="uid://ckm51mfbyqv14" path="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3" id="8_0a66k"]
 [ext_resource type="Texture2D" uid="uid://lm4bpp8gpoec" path="res://assets/UI/Credits.png" id="9_ljvis"]
+[ext_resource type="AudioStream" uid="uid://dc461g6lukdpd" path="res://assets/sounds/416179__inspectorj__book-flipping-through-pages-a.wav" id="10_rhgf0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ym3xy"]
 font = ExtResource("7_0c80n")
 font_size = 40
 font_color = Color(1, 0.745098, 0, 1)
 
-[node name="menu" type="Control" node_paths=PackedStringArray("LabelDeliver", "LabelCredits", "CreditsTexture", "Fader")]
+[node name="menu" type="Control" node_paths=PackedStringArray("LabelDeliver", "LabelCredits", "CreditsTexture", "PaperSound", "Fader")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +29,7 @@ script = ExtResource("1_s81ax")
 LabelDeliver = NodePath("VBoxContainer/GridContainer/MarginContainer/TickDeliver")
 LabelCredits = NodePath("VBoxContainer/GridContainer/MarginContainer3/TickExpeditors")
 CreditsTexture = NodePath("MarginContainer/TextureRect2")
+PaperSound = NodePath("PaperSound")
 Fader = NodePath("FadeRect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -154,3 +156,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="PaperSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_rhgf0")

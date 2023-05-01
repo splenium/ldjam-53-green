@@ -77,9 +77,10 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MissionIndicator" type="HBoxContainer" parent="MissionInfo"]
+[node name="MissionIndicator" type="HBoxContainer" parent="MissionInfo" node_paths=PackedStringArray("planetLabel")]
 layout_mode = 2
 script = ExtResource("4_jlim0")
+planetLabel = NodePath("TargetPlanetLabel")
 
 [node name="Label" type="Label" parent="MissionInfo/MissionIndicator"]
 layout_mode = 2

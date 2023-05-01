@@ -21,16 +21,20 @@ public partial class HandleMenu : Control
 
 	[Export]
 	private TextureRect CreditsTexture;
+	[Export]
+	private AudioStreamPlayer2D PaperSound; 
 
 	[Export]
 	private ColorRect Fader;
+
+	private bool _isLeaving = false;
 
 	private async void FadeOut()
 	{
 		float duration = 2.0f;
 		float stepspersec = 30.0f;
 
-		float steptime = 1.0f/ stepspersec;
+		float steptime = 1.0f / stepspersec;
 
 		float time = 0.0f;
 		Fader.Color = new Color(0, 0, 0, 0);
@@ -40,7 +44,7 @@ public partial class HandleMenu : Control
 			Fader.Color = new Color(0, 0, 0, time / duration);
 			time += steptime;
 		}
-		Fader.Color = new Color(0, 0, 0,1);
+		Fader.Color = new Color(0, 0, 0, 1);
 		await ToSignal(GetTree().CreateTimer(1), "timeout");
 		StartGame();
 	}
@@ -54,6 +58,8 @@ public partial class HandleMenu : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (_isLeaving)
+			return;
 		if (_isShowingCredits)
 		{
 			if (Input.IsActionJustReleased("echap"))
@@ -81,7 +87,8 @@ public partial class HandleMenu : Control
 			{
 				if (_isOnDeliver)
 				{
-				   FadeOut();
+					_isLeaving = true;
+					FadeOut();
 				}
 				else
 				{
@@ -94,6 +101,8 @@ public partial class HandleMenu : Control
 
 	private void DisplayCredit(bool display)
 	{
+		if (display)
+			PaperSound.Play();
 		CreditsTexture.Visible = display;
 		_isShowingCredits = display;
 	}
