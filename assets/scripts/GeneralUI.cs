@@ -15,6 +15,6 @@ public partial class GeneralUI : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        CashLabel.Text = _gameManager.cash.ToString();
+        CashLabel.Text = _gameManager.cash.ToString() + " / " + (_gameManager.WinCash + _gameManager.WinCash * 0.20f).ToString();
 	}
 }
