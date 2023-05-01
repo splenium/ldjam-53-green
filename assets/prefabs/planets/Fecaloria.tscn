@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="16_xqsqf"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="17_tsml0"]
-[ext_resource type="Material" path="res://assets/shaders/ReactorShaderMat.tres" id="18_j3dvw"]
+[ext_resource type="Material" uid="uid://b00ofare35uwc" path="res://assets/shaders/ReactorShaderMat.tres" id="18_j3dvw"]
 [ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="19_d3och"]
 
 [sub_resource type="Gradient" id="Gradient_hk26n"]

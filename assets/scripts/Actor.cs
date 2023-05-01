@@ -69,7 +69,7 @@ public partial class Actor : Area2D
             this.deliveryLabel.Text = "E  -  Give   package";
         } else
         {
-            this.deliveryLabel.Text = "Nothing  to  deliver";
+            this.deliveryLabel.Text = "Nothing   to   deliver";
         }
         this.setLabelVisible(true, body);
     }
