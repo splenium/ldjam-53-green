@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://cbho6h8he2jq5"]
 
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="1_6rpei"]
 [ext_resource type="Script" path="res://assets/scripts/GeneralUI.cs" id="1_f1k6m"]

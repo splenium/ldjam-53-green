@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=18 format=3 uid="uid://c7qttdwfh886"]
 
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_6kbr4"]
 [ext_resource type="Material" uid="uid://bf6n2shp7nbhq" path="res://assets/shaders/landscapes/landscapeEtronis/LandscapeEtronis_Back_ShaderMat.tres" id="2_u3hcr"]
@@ -67,7 +67,7 @@ offset = Vector2(0, -150)
 position = Vector2(618, 560)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  special  gift  to  Bubonis", "Give   package  to  Troupix", "Give   mistery   things  to  Fartropin")
-rewards = PackedInt32Array(10, 12, 28)
+rewards = PackedInt32Array(10, 15, 200)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(2, 0, 1)
 

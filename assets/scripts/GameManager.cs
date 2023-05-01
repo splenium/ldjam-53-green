@@ -39,7 +39,7 @@ public partial class GameManager : Node
 
     // Called when the node enters the scene tree for the first time.
 
-    private int _startCash = 200;
+    private int _startCash = 0;
 	public override void _Ready()
 	{
 		this.NewGame();
@@ -136,13 +136,8 @@ public partial class GameManager : Node
 		return _missionPlanetTarget == lastMissionPlanet;
 	}
 
-	private void ClearMission()
+	public void ClearMission()
 	{
 		_missionName = STRING_NULL;
-	}
-
-	public void AbortTheMission()
-	{
-		ClearMission();
 	}
 }
