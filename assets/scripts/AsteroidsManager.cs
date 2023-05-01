@@ -7,6 +7,7 @@ public partial class AsteroidsManager : Node
     private PackedScene _asteroidPrefabs;
     private Vector2[] _offSets;
 
+    private PackedScene[] _asteroidsPrefabs;
     [Export]
     private Timer spawnTimer;
 
