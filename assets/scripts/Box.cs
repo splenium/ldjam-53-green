@@ -32,13 +32,26 @@ public partial class Box : Area2D
         MissionSelection.Visible = false;
         _gameManager = GetNode<GameManager>("/root/GameManager");
 
+        CheckAllOk();
+
         for (int i = 0; i < labels.Length; i++)
         {
             var missionComponent = MissionPrefabs.Instantiate();
             MissionSelection.AddChild(missionComponent);
-            this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], this.MissionSelection.GetChildren()[i]);
+            this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], missionComponent);
         }
 
+    }
+
+    private void CheckAllOk()
+    {
+        var n = labels.Length;
+        if(n != rewards.Length || n != keys.Length || n != planetTarget.Length)
+        {
+            GD.PrintErr("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
+            GD.PrintErr("label: " + n + ", rewards: " + rewards.Length + ", keys: " + keys.Length + ", planetTarget:" + planetTarget.Length);
+            throw new Exception("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
+        }
     }
 
     private void SetMission(string label, int reward, string key, int planetTarget, Node node)
@@ -109,7 +122,6 @@ public partial class Box : Area2D
         for (int i = 0; i < missions.Count; i++)
         {
             Mission m = missions[i] as Mission;
-            GD.Print(m.MissionLabel + ": " + MissionIsPossible(i).ToString());
             if (m != null)
             {
                m.setDisable(MissionIsPossible(i));

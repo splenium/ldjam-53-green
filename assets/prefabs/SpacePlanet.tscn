@@ -59,7 +59,7 @@ text = "E -  Landing"
 label_settings = SubResource("LabelSettings_aad07")
 
 [node name="ExitShipPosition" type="Node2D" parent="."]
-position = Vector2(134, 118)
+position = Vector2(273, -156)
 
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

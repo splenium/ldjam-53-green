@@ -14,21 +14,17 @@ public partial class PlanetSceneManager : Node2D
 	public override void _Ready()
 	{
 		GameManager gm = GetNode<GameManager>("/root/GameManager");
-		List<Node> childToRemove = new();
-		Godot.Collections.Array<Node> planets = PlanetsContainer.GetChildren();
+		var planets = PlanetsContainer.GetChildren();
 
 		long thePlanet = gm.PlanetPosition;
 
-        for (int i = 0; i < planets.Count; i++)
+        foreach (Node2D planet in planets)
 		{
-			if(i != thePlanet)
+			GroundPlanet p = planet as GroundPlanet;
+			if(p != null && p.PlanetId != gm.PlanetPosition)
 			{
-				childToRemove.Add(planets[i]);
+                PlanetsContainer.RemoveChild(planet);
 			}
-		}
-
-		foreach(Node toRemove in childToRemove) {
-			PlanetsContainer.RemoveChild(toRemove);
 		}
 
 		if(PlanetLabelName != null)
