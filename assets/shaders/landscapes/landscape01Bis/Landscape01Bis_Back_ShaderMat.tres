@@ -3,7 +3,8 @@
 [ext_resource type="Shader" path="res://assets/shaders/Environnement.gdshader" id="1_7isma"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_7isma")
-shader_parameter/colorA = Color(0.572549, 0.541176, 0.137255, 1)
+shader_parameter/colorA = Color(0.741176, 0.447059, 0.160784, 1)
 shader_parameter/colorB = Color(0.576471, 0.32549, 0.290196, 1)
 shader_parameter/opacity = 0.7

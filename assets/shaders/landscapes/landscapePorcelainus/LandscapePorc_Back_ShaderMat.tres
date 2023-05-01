@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c7ft5uft4y482"]
+
+[ext_resource type="Shader" path="res://assets/shaders/Environnement.gdshader" id="1_myy7q"]
+
+[resource]
+shader = ExtResource("1_myy7q")
+shader_parameter/colorA = Color(0.247059, 0.419608, 0.803922, 1)
+shader_parameter/colorB = Color(0, 0.117647, 0.215686, 1)
+shader_parameter/opacity = 0.7

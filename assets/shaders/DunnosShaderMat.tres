@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://5xjrwtojhcbl"]
+
+[ext_resource type="Shader" path="res://assets/shaders/Dunnos.gdshader" id="1_t6o4y"]
+
+[resource]
+shader = ExtResource("1_t6o4y")
