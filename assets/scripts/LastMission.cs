@@ -22,12 +22,12 @@ public partial class LastMission : Node2D
         }
 	}
 
-    private void setLabelVisible(bool visible, Node2D body)
+    private void setLabelVisible(bool visible_, Node2D body)
     {
         CharacterBody2D p = body as CharacterBody2D;
         if (p != null)
         {
-            label.Visible = visible;
+            label.Visible = visible_;
         }
     }
 

@@ -29,12 +29,12 @@ public partial class Actor : Area2D
         _baseScale = this.Scale;
 	}
 
-    private void setLabelVisible(bool visible, Node2D collided)
+    private void setLabelVisible(bool visible_, Node2D collided)
     {
         CharacterBody2D c = collided as CharacterBody2D;
         if (c != null)
         {
-            this.deliveryLabel.Visible = visible;
+            this.deliveryLabel.Visible = visible_;
         }
     }
 

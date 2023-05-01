@@ -53,13 +53,12 @@ public partial class SpacePlanet : Node2D
 
     }
 
-	private void SetLandingLabel(bool visible, Node2D node)
+	private void SetLandingLabel(bool visible_, Node2D node)
 	{
 		CharacterBody2D c = node as CharacterBody2D;
-		bool finalMissionActive = _gameManager.IsFinalMission();
 		if(c != null && _gameManager.CanLandOnPlanet(PlanetId)) // Final Conditon for planet entrance
 		{
-			LandingLabel.Visible = visible;
+			LandingLabel.Visible = visible_;
 		}
 	}
 

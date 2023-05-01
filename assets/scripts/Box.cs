@@ -20,7 +20,7 @@ public partial class Box : Area2D
     [Export]
     private string[] keys;
     [Export]
-    private int[] planetTarget;
+    private int[] _planetTarget;
     public PackedScene MissionPrefabs;
 
 
@@ -45,7 +45,7 @@ public partial class Box : Area2D
             {
                 var missionComponent = MissionPrefabs.Instantiate();
                 MissionSelection.AddChild(missionComponent);
-                this.SetMission(labels[i], rewards[i], keys[i], planetTarget[i], missionComponent);
+                this.SetMission(labels[i], rewards[i], keys[i], _planetTarget[i], missionComponent);
             }
         }
 
@@ -54,10 +54,10 @@ public partial class Box : Area2D
     private void CheckAllOk()
     {
         var n = labels.Length;
-        if(n != rewards.Length || n != keys.Length || n != planetTarget.Length)
+        if(n != rewards.Length || n != keys.Length || n != _planetTarget.Length)
         {
             GD.PrintErr("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
-            GD.PrintErr("label: " + n + ", rewards: " + rewards.Length + ", keys: " + keys.Length + ", planetTarget:" + planetTarget.Length);
+            GD.PrintErr("label: " + n + ", rewards: " + rewards.Length + ", keys: " + keys.Length + ", planetTarget:" + _planetTarget.Length);
             throw new Exception("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
         }
     }
@@ -148,12 +148,12 @@ public partial class Box : Area2D
         }
     }
 
-	private void SetMissionSelectVisible(bool visible, Node2D body)
+	private void SetMissionSelectVisible(bool visible_, Node2D body)
 	{
         CharacterBody2D p = body as CharacterBody2D;
 		if (p != null && !_gameManager.MissionInProgress())
         {
-            MissionSelection.Visible = visible;
+            MissionSelection.Visible = visible_;
 
         }
     }

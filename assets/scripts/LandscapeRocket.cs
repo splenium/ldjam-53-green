@@ -39,12 +39,12 @@ public partial class LandscapeRocket : Area2D
         }
     }
 
-    private void setLabelVisible(bool visible, Node2D collided)
+    private void setLabelVisible(bool visible_, Node2D collided)
     {
         CharacterBody2D c = collided as CharacterBody2D;
         if (c != null)
         {
-            this.InfoLabel.Visible = visible;
+            this.InfoLabel.Visible = visible_;
         }
     }
 
