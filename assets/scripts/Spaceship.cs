@@ -9,6 +9,9 @@ public partial class Spaceship : CharacterBody2D
     [Export]
     private float _rotationSpeed = 125f;
 
+
+    private Sprite2D _reactor;
+
     private GameManager _gameManager;
 
     [Export]
@@ -24,6 +27,7 @@ public partial class Spaceship : CharacterBody2D
     {
 
         _gameManager = GetNode<GameManager>("/root/GameManager");
+        _reactor = GetNode<Sprite2D>("Reactor");
         IndicatorPrefabs = ResourceLoader.Load("res://assets/prefabs/indicator.tscn") as PackedScene;
         RegenIndicator();
     }
@@ -59,6 +63,11 @@ public partial class Spaceship : CharacterBody2D
         
             Velocity += input_vector.Rotated(Rotation) * _acceleration;
             Velocity = Velocity.LimitLength(_maxSpeed);
+            if (input_vector.Y < 0)
+            {
+                _reactor.Show();
+            }
+
             if (Input.IsActionPressed("right"))
             {
                 Rotate((float)Mathf.DegToRad(_rotationSpeed * delta));
@@ -69,6 +78,7 @@ public partial class Spaceship : CharacterBody2D
             }
             if (input_vector.Y == 0)
             {
+                _reactor.Hide();
                 Velocity = Velocity.MoveToward(Vector2.Zero, 3);
             }
             MoveAndSlide();
