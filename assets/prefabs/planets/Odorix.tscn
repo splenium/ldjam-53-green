@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://4ij54ky6w723"]
+[gd_scene load_steps=18 format=3 uid="uid://4ij54ky6w723"]
 
+[ext_resource type="Script" path="res://assets/prefabs/planets/GroundPlanet.cs" id="1_d1sri"]
 [ext_resource type="Material" uid="uid://criasgmighl7f" path="res://assets/shaders/landscapes/landscape01Bis/Landscape01Bis_Back_ShaderMat.tres" id="1_tpe36"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_pyl83"]
 [ext_resource type="Script" path="res://scenes/game/Follow.cs" id="3_r6uvp"]
@@ -24,8 +25,10 @@ gradient = SubResource("Gradient_hk26n")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
 size = Vector2(739, 145.558)
 
-[node name="Fartopia" type="Node2D"]
+[node name="Odorix" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_d1sri")
+PlanetId = 1
 
 [node name="Backbackground" type="Sprite2D" parent="."]
 scale = Vector2(51000, 51000)
@@ -63,10 +66,10 @@ offset = Vector2(0, -150)
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("9_qvris")]
 position = Vector2(618, 560)
 Rocket = NodePath("../Rocket")
-labels = PackedStringArray("Give the letter to Fartatin", "Give the package to Troupix")
-rewards = PackedInt32Array(5, 50)
-keys = PackedStringArray("E", "R")
-planetTarget = PackedInt32Array(1, 0)
+labels = PackedStringArray("Give the letter to Fartatin", "Give the package to Troupix", "Give special package to Bubonis")
+rewards = PackedInt32Array(5, 50, 75)
+keys = PackedStringArray("E", "R", "T")
+planetTarget = PackedInt32Array(1, 0, 2)
 
 [node name="Landscape01" parent="." instance=ExtResource("10_hanju")]
 position = Vector2(546, 625)

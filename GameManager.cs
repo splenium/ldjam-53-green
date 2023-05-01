@@ -13,8 +13,9 @@ public partial class GameManager : Node
 	public int PlanetPosition { get; set; }
 	public string[] PlanetNames = new string[]
 	{
-		"Fartopia",
-		"Odorix"
+		"Fecaloria",
+		"Odorix",
+		"Etronis"
 	};
 
 	private string _planetScene = "res://scenes/game/PlanetScene.tscn";

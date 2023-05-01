@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://7rn7bg3lod18"]
+[gd_scene load_steps=8 format=3 uid="uid://bib1n6wujtt7p"]
 
 [ext_resource type="Script" path="res://assets/scripts/PlanetSceneManager.cs" id="1_i4bn7"]
-[ext_resource type="PackedScene" uid="uid://bk6dvpgttw10i" path="res://assets/prefabs/planets/fartopia.tscn" id="2_ox5pk"]
-[ext_resource type="PackedScene" uid="uid://4ij54ky6w723" path="res://assets/prefabs/planets/fartopiaBis.tscn" id="3_lppju"]
+[ext_resource type="PackedScene" uid="uid://bk6dvpgttw10i" path="res://assets/prefabs/planets/Fecaloria.tscn" id="2_ox5pk"]
+[ext_resource type="PackedScene" uid="uid://4ij54ky6w723" path="res://assets/prefabs/planets/Odorix.tscn" id="3_lppju"]
+[ext_resource type="PackedScene" uid="uid://cwxv7bwddvnja" path="res://assets/prefabs/planets/Etronis.tscn" id="3_xaopi"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="14_44y0g"]
 
@@ -18,9 +19,11 @@ PlanetLabelName = NodePath("HUD/PlanetName/MarginContainer/PlanetNameLabel")
 
 [node name="PlanetsContainer" type="Node2D" parent="."]
 
-[node name="Fartopia" parent="PlanetsContainer" instance=ExtResource("2_ox5pk")]
+[node name="Fecaloria" parent="PlanetsContainer" instance=ExtResource("2_ox5pk")]
 
-[node name="Fartopia2" parent="PlanetsContainer" instance=ExtResource("3_lppju")]
+[node name="Etronis" parent="PlanetsContainer" instance=ExtResource("3_xaopi")]
+
+[node name="Odorix" parent="PlanetsContainer" instance=ExtResource("3_lppju")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

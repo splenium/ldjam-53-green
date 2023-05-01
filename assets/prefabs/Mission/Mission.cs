@@ -19,7 +19,6 @@ public partial class Mission : MarginContainer
 
     public void setNewMission(string missionLabel, string missionKey, int reward, int planetTarget)
 	{
-		GD.Print(missionLabel);
 		this.MissionLabel = missionLabel;
 		this.MissionKey = missionKey;
 		this.reward = reward;
