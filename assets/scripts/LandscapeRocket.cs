@@ -16,6 +16,11 @@ public partial class LandscapeRocket : Area2D
         _gameManager = GetNode<GameManager>("/root/GameManager");
         this.InfoLabel.Visible = false;
         this.costLabel.Text = "Cost:   " + GoingSpaceCost.ToString();
+
+        if(_gameManager.MissionInProgress() && _gameManager.MissionPlanetTarget() != _gameManager.PlanetPosition && GoingSpaceCost > _gameManager.cash)
+        {
+            _gameManager.ClearMission();
+        }
     }
 
     private bool CanGoInSpace()
