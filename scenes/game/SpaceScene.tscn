@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://be6v8uu06s4ve"]
 
 [ext_resource type="Script" path="res://assets/scripts/AsteroidsManager.cs" id="1_o733m"]
-[ext_resource type="PackedScene" uid="uid://cnt42u1esyvyr" path="res://assets/prefabs/sun.tscn" id="1_s4uyw"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/sun.tscn" id="1_s4uyw"]
 [ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="2_3onkj"]
 [ext_resource type="PackedScene" uid="uid://bfe1k0va6oc0" path="res://assets/prefabs/Asteroids/Asteroid1.tscn" id="2_briab"]
 [ext_resource type="PackedScene" uid="uid://qduhgkf7ayou" path="res://assets/prefabs/SpacePlanet.tscn" id="2_lvf8k"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bj2fxobj3bb66" path="res://assets/sprites/UglyThingThree.png" id="5_ka280"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="6_2dmg6"]
 [ext_resource type="Texture2D" uid="uid://d4gij6cxgmcpd" path="res://assets/sprites/UglyThingFour.png" id="6_64dne"]
-[ext_resource type="PackedScene" uid="uid://b45ibahn07bkt" path="res://assets/prefabs/indicator.tscn" id="12_82hjb"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/indicator.tscn" id="12_82hjb"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -82,6 +82,8 @@ offset_bottom = -1099.0
 scale = Vector2(105.887, 105.887)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(1, 1)
+transform = Transform2D(1, 0, 0, 1, 1, 1)
 
 [node name="BackgroudStars" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -96,7 +98,6 @@ motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(4096, 4096)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nebula"]
-modulate = Color(1, 1, 1, 0.8)
 texture = ExtResource("4_hsvpi")
 centered = false
 
