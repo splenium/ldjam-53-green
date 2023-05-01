@@ -4,6 +4,7 @@ using System;
 
 public partial class GameManager : Node
 {
+	public static string STRING_NULL = "[[STRING_NULL]]";
 	// All these attribute are for Mission:
 	private string _missionName;
 	private int _missionReward;
@@ -101,7 +102,7 @@ public partial class GameManager : Node
 
     public bool MissionInProgress()
     {
-        return _missionName != null;
+        return _missionName != STRING_NULL;
     }
 
     public int MissionReward()
@@ -137,7 +138,7 @@ public partial class GameManager : Node
 
 	private void ClearMission()
 	{
-		_missionName = null;
+		_missionName = STRING_NULL;
 	}
 
 	public void AbortTheMission()
