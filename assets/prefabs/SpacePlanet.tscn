@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/SpacePlanet.cs" id="1_qx0a2"]
 [ext_resource type="Texture2D" uid="uid://bg7td2pm1a6pb" path="res://assets/sprites/UglyThingTwo.png" id="2_ekwoq"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="2_vq1r6"]
-[ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="3_86bkp"]
+[ext_resource type="PackedScene" uid="uid://dre1kenohyva4" path="res://assets/prefabs/planet_prefab.tscn" id="5_agi3l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nl3ed"]
 font = ExtResource("2_vq1r6")
@@ -16,13 +16,13 @@ radius = 235.257
 font = ExtResource("2_vq1r6")
 font_size = 20
 
-[node name="SpacePlanet" type="Node2D" node_paths=PackedStringArray("PlanetNameLabel", "LandingLabel", "PlanetSprite", "ExitShipPosition")]
+[node name="SpacePlanet" type="Node2D" node_paths=PackedStringArray("PlanetNameLabel", "LandingLabel", "planet", "ExitShipPosition")]
 position = Vector2(548, 283)
 script = ExtResource("1_qx0a2")
 PlanetTexture = ExtResource("2_ekwoq")
 PlanetNameLabel = NodePath("CenterContainer/PlanetNameLabel")
 LandingLabel = NodePath("LandingLabel")
-PlanetSprite = NodePath("PlanetSprite")
+planet = NodePath("PlanetPrefab")
 ExitShipPosition = NodePath("ExitShipPosition")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -42,8 +42,8 @@ label_settings = SubResource("LabelSettings_nl3ed")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlanetSprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_86bkp")
+[node name="PlanetPrefab" parent="." instance=ExtResource("5_agi3l")]
+scale = Vector2(7.04, 7.04)
 
 [node name="Area2D" type="Area2D" parent="."]
 

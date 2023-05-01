@@ -13,9 +13,13 @@ public partial class SpacePlanet : Node2D
 	private Label PlanetNameLabel;
 	[Export]
 	private Label LandingLabel;
+    [Export]
+    public Color ColorA;
+    [Export]
+    public Color ColorB;
 	[Export]
-	private Sprite2D PlanetSprite;
-	[Export]
+	private PlanetPrefab planet;
+    [Export]
 	public Node2D ExitShipPosition;
 
 	private GameManager _gameManager;
@@ -25,9 +29,10 @@ public partial class SpacePlanet : Node2D
 	{
         _gameManager = GetNode<GameManager>("/root/GameManager");
 		LandingLabel.Visible = false;
-		PlanetSprite.Texture = PlanetTexture;
+        planet.ColorA = ColorA;
+		planet.ColorB = ColorB;
 
-        if(PlanetNameLabel != null)
+        if (PlanetNameLabel != null)
 		{
 			PlanetNameLabel.Text = "[" + _gameManager.PlanetNames[PlanetId] + "]";
 		}
