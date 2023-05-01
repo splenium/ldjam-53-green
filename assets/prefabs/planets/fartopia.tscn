@@ -63,7 +63,7 @@ offset = Vector2(0, -150)
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
 position = Vector2(618, 560)
 Rocket = NodePath("../Rocket")
-labels = PackedStringArray("Report the letter to Aliatrox", "Send Gift to the world of the incredible Bibobux")
+labels = PackedStringArray("Give the letter to Troupix", "Give the package to Fartatin ")
 rewards = PackedInt32Array(10, 25)
 keys = PackedStringArray("E", "R")
 planetTarget = PackedInt32Array(0, 1)

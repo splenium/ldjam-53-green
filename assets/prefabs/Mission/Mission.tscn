@@ -120,5 +120,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Disable" type="ColorRect" parent="."]
+visible = false
 layout_mode = 2
 color = Color(0.117647, 0.117647, 0.117647, 0.709804)

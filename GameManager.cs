@@ -25,10 +25,10 @@ public partial class GameManager : Node
     private int _startCash = 0;
 	public override void _Ready()
 	{
-		this.newGame();
+		this.NewGame();
 	}
 
-    public void newGame()
+    public void NewGame()
 	{
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
