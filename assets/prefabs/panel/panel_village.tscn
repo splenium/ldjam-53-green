@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnrsohg5idkfm"]
+
+[ext_resource type="Texture2D" uid="uid://cqxujenx4x737" path="res://assets/sprites/PanelDirection.png" id="1_4k3bx"]
+[ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="2_v4ync"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_yh6fy"]
+[ext_resource type="Material" uid="uid://b6ijjb04i2y4a" path="res://assets/shaders/ReactorShaderMat.tres" id="4_a2e16"]
+[ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="5_bpj60"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqf5p"]
+font = ExtResource("3_yh6fy")
+
+[node name="PanelVillage" type="Sprite2D"]
+position = Vector2(304.425, 461.974)
+rotation = 3.14159
+scale = Vector2(2, -2)
+texture = ExtResource("1_4k3bx")
+script = ExtResource("2_v4ync")
+Speed = 4.0
+Amplitude = 0.09
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(-1, 1)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "Village"
+label_settings = SubResource("LabelSettings_pqf5p")
+
+[node name="thruster" type="Sprite2D" parent="."]
+material = ExtResource("4_a2e16")
+position = Vector2(-56, 3)
+scale = Vector2(1.12, 2.12)
+texture = ExtResource("5_bpj60")
+
+[node name="thruster2" type="Sprite2D" parent="."]
+material = ExtResource("4_a2e16")
+position = Vector2(56, 3)
+scale = Vector2(1.32, 2.24)
+texture = ExtResource("5_bpj60")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5ksk1qj2otlc"]
+
+[ext_resource type="Texture2D" uid="uid://cqxujenx4x737" path="res://assets/sprites/PanelDirection.png" id="1_qf4xs"]
+[ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="2_nnw25"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_vpupq"]
+[ext_resource type="Material" uid="uid://b6ijjb04i2y4a" path="res://assets/shaders/ReactorShaderMat.tres" id="4_xarvl"]
+[ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="5_1p41n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqf5p"]
+font = ExtResource("3_vpupq")
+
+[node name="PanelMission" type="Sprite2D"]
+position = Vector2(903.243, 350.057)
+scale = Vector2(2, 2)
+texture = ExtResource("1_qf4xs")
+script = ExtResource("2_nnw25")
+Speed = 6.0
+Amplitude = 0.07
+Seed = 2.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "Mission"
+label_settings = SubResource("LabelSettings_pqf5p")
+
+[node name="thruster" type="Sprite2D" parent="."]
+material = ExtResource("4_xarvl")
+position = Vector2(-56, 3)
+scale = Vector2(1.12, 2.12)
+texture = ExtResource("5_1p41n")
+
+[node name="thruster2" type="Sprite2D" parent="."]
+material = ExtResource("4_xarvl")
+position = Vector2(56, 3)
+scale = Vector2(1.32, 2.24)
+texture = ExtResource("5_1p41n")
