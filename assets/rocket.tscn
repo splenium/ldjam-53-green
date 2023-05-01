@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cap0hwxyeoi3j"]
+[gd_scene load_steps=8 format=3 uid="uid://ngeoqfxvks8l"]
 
 [ext_resource type="Script" path="res://assets/scripts/LandscapeRocket.cs" id="1_8e15r"]
 [ext_resource type="Texture2D" uid="uid://by6w54irxl4gt" path="res://assets/sprites/space/Ship.png" id="2_x34np"]

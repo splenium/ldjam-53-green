@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk6dvpgttw10i"]
+[gd_scene load_steps=18 format=3 uid="uid://chklyrlwka1ka"]
 
 [ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
 [ext_resource type="Script" path="res://assets/prefabs/planets/GroundPlanet.cs" id="1_xxo2e"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_togc3"]
 [ext_resource type="Script" path="res://scenes/game/Follow.cs" id="3_643s2"]
-[ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
+[ext_resource type="Material" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
 [ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="5_w7ju1"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="6_8mxgf"]
-[ext_resource type="PackedScene" uid="uid://bfcvq1gpo13wk" path="res://assets/prefabs/rocket.tscn" id="7_3kwib"]
+[ext_resource type="PackedScene" uid="uid://bwele1coowneo" path="res://assets/prefabs/rocket.tscn" id="7_3kwib"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="11_22e4q"]
 [ext_resource type="PackedScene" uid="uid://drcvavequkx5s" path="res://assets/prefabs/Box.tscn" id="12_rhght"]
 [ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="13_fdo4j"]
@@ -65,7 +65,7 @@ offset = Vector2(0, -150)
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
 position = Vector2(618, 560)
 Rocket = NodePath("../Rocket")
-labels = PackedStringArray("Give the letter to Troupix", "Give the package to Fartatin ", "TGive Troupix gift to Bubonis")
+labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
 rewards = PackedInt32Array(15, 25, 30)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(0, 1, 2)
