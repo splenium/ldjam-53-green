@@ -31,25 +31,7 @@ public partial class Asteroid : Area2D
         _gameManager = GetNode<GameManager>("/root/GameManager");
 
         Rotation = (float)GD.RandRange(0, 2d * MathF.PI);
-        speed = GD.RandRange(50, 100);
-        //switch (_size)
-        //{
-        //    case AsteroidSize.Large:
-        //        
-        //        _sprite.Texture = GD.Load("res://assets/sprites/space/meteors/meteorBrown_big1.png") as Texture2D;
-        //        //_collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_big.tres") as Shape2D;
-        //        break;
-        //    case AsteroidSize.Medium:
-        //        speed = GD.RandRange(100, 150);
-        //        _sprite.Texture = GD.Load("res://assets/sprites/space/meteors/meteorBrown_med1.png") as Texture2D;
-        //        //_collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_medium.tres") as Shape2D;
-        //        break;
-        //    case AsteroidSize.Small:
-        //        speed = GD.RandRange(150, 200);
-        //        _sprite.Texture = GD.Load("res://assets/sprites/space/meteors/meteorBrown_small1.png") as Texture2D;
-        //        //_collisionShape.Shape = GD.Load("res://ressources/asteroid_cshape_small.tres") as Shape2D;
-        //        break;                   
-        //}
+        speed = GD.RandRange(50, 200);
     }
 
     void _on_body_entered(Node node)
@@ -58,7 +40,6 @@ public partial class Asteroid : Area2D
         _gameManager.IsDeath = true;
 
         _canvasLayer.AddChild(instance);
-        //_spaceShips.QueueFree();
 
 
     }
@@ -70,18 +51,7 @@ public partial class Asteroid : Area2D
         float distance = cameraCenter.DistanceTo(Position);
         if (distance > 2000 )
         {
-            GD.Print("Fin de vie de l'asteroide... destruction de l'objet!");
             QueueFree();
         }
     }
-
-    ////void _on_body_entered(Node node)
-    ////{
-    ////    QueueFree();
-    ////}
-
-    //void _on_player_spaceships_input_event(Node node)
-    //{
-    //    GD.Print("Caca");
-    //}
 }
