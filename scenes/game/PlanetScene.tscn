@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bib1n6wujtt7p"]
+[gd_scene load_steps=10 format=3 uid="uid://bib1n6wujtt7p"]
 
 [ext_resource type="Script" path="res://assets/scripts/PlanetSceneManager.cs" id="1_i4bn7"]
 [ext_resource type="PackedScene" uid="uid://bk6dvpgttw10i" path="res://assets/prefabs/planets/Fecaloria.tscn" id="2_ox5pk"]
 [ext_resource type="PackedScene" uid="uid://4ij54ky6w723" path="res://assets/prefabs/planets/Odorix.tscn" id="3_lppju"]
 [ext_resource type="PackedScene" uid="uid://cwxv7bwddvnja" path="res://assets/prefabs/planets/Etronis.tscn" id="3_xaopi"]
+[ext_resource type="PackedScene" uid="uid://bhdlna004ejq4" path="res://assets/prefabs/planets/Porcelainus.tscn" id="5_iib11"]
 [ext_resource type="PackedScene" uid="uid://dhlsdvcjhnpmb" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
+[ext_resource type="Texture2D" uid="uid://crfpdk4roigad" path="res://assets/sprites/Ui/PlanetIcon.png" id="7_yuej3"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="14_44y0g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r5wvj"]
@@ -15,7 +17,7 @@ font_size = 60
 texture_filter = 1
 script = ExtResource("1_i4bn7")
 PlanetsContainer = NodePath("PlanetsContainer")
-PlanetLabelName = NodePath("HUD/PlanetName/MarginContainer/PlanetNameLabel")
+PlanetLabelName = NodePath("HUD/PlanetName/HBoxContainer/MarginContainer/PlanetNameLabel")
 
 [node name="PlanetsContainer" type="Node2D" parent="."]
 
@@ -24,6 +26,8 @@ PlanetLabelName = NodePath("HUD/PlanetName/MarginContainer/PlanetNameLabel")
 [node name="Etronis" parent="PlanetsContainer" instance=ExtResource("3_xaopi")]
 
 [node name="Odorix" parent="PlanetsContainer" instance=ExtResource("3_lppju")]
+
+[node name="Porcelainus" parent="PlanetsContainer" instance=ExtResource("5_iib11")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -43,13 +47,25 @@ theme_override_constants/margin_top = 13
 layout_mode = 2
 color = Color(0.145098, 0.14902, 0.137255, 0.164706)
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/PlanetName"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/PlanetName"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HUD/PlanetName/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="TextureRect" parent="HUD/PlanetName/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("7_yuej3")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/PlanetName/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 7
 
-[node name="PlanetNameLabel" type="Label" parent="HUD/PlanetName/MarginContainer"]
+[node name="PlanetNameLabel" type="Label" parent="HUD/PlanetName/HBoxContainer/MarginContainer"]
 layout_mode = 2
-text = "🪐 Odorix"
+text = "Odorix"
 label_settings = SubResource("LabelSettings_r5wvj")
 horizontal_alignment = 1
 vertical_alignment = 1
