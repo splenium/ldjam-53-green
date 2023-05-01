@@ -1,4 +1,4 @@
-using Godot;
+﻿using Godot;
 using System;
 
 public partial class HandleMenu : Control
@@ -42,8 +42,13 @@ public partial class HandleMenu : Control
         }
         Fader.Color = new Color(0, 0, 0,1);
         await ToSignal(GetTree().CreateTimer(1), "timeout");
-        _gameManager.LoadScene("res://scenes/game/PlanetScene.tscn");
+        StartGame();
+    }
 
+    private void StartGame()
+    {
+        _gameManager.NewGame();
+        _gameManager.LandingOn(_gameManager.PlanetPosition);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,21 +69,21 @@ public partial class HandleMenu : Control
 
             if (_isOnDeliver)
             {
-                LabelDeliver.Text = ">";
+                LabelDeliver.Text = "X";
                 LabelCredits.Text = "";
             }
             else
             {
                 LabelDeliver.Text = "";
-                LabelCredits.Text = ">";
+                LabelCredits.Text = "X";
             }
 
-            if (Input.IsActionJustReleased("ente" +
-                "" +
-                "r"))
+            if (Input.IsActionJustReleased("enter"))
             {
                 if (_isOnDeliver)
-                    FadeOut();// TODO start game
+                {
+                   FadeOut();
+                }
                 else
                 {
                     CreditsTexture.Visible = true;

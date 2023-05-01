@@ -4,13 +4,18 @@ using System;
 public partial class Actor : Area2D
 {
     [Export]
+    private string _name;
+    [Export]
     private Label deliveryLabel;
+    [Export]
+    private Label labelName;
     private GameManager _gameManager { get; set; }
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
         _gameManager = GetNode<GameManager>("/root/GameManager");
         deliveryLabel.Visible = false;
+        labelName.Text = _name;
 	}
 
     private void setLabelVisible(bool visible, Node2D collided)
@@ -24,8 +29,7 @@ public partial class Actor : Area2D
 
     private bool MissionIsForMe()
     {
-        // TODO: make other condition to refuse not for us package
-        return _gameManager.SelectedMission != null;
+        return _gameManager.MissionInProgress() && _gameManager.MissionPlanetTarget() == _gameManager.PlanetPosition;
     }
 
     public override void _Process(double delta)

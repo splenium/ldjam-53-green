@@ -3,22 +3,33 @@ using System;
 
 public partial class GameManager : Node
 {
+	// All these attribute are for Mission:
+	private string _missionName;
+	private int _missionReward;
+	private int _missionPlanetTarget;
 
-	public Mission SelectedMission { get; set; }
+
 	public int cash { get; set; }
 	public int PlanetPosition { get; set; }
+	public string[] PlanetNames = new string[]
+	{
+		"Fartopia",
+		"Odorix"
+	};
 
-	// Called when the node enters the scene tree for the first time.
+	private string _planetScene = "res://scenes/game/PlanetScene.tscn";
+    private string _spaceScene = "res://scenes/game/SpaceScene.tscn";
 
-	private int _startCash = 40;
+    // Called when the node enters the scene tree for the first time.
+
+    private int _startCash = 0;
 	public override void _Ready()
 	{
-		this.newGame();
+		this.NewGame();
 	}
 
-	public void newGame()
+    public void NewGame()
 	{
-		this.SelectedMission = null;
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
 	}
@@ -26,22 +37,64 @@ public partial class GameManager : Node
 	public void LoadScene(string scenePath)
 	{
 		GetTree().ChangeSceneToFile(scenePath);
-		//GetTree().ReloadCurrentScene();
 	}
 
 	public void LoadMission(Mission mission)
 	{
-		this.SelectedMission = mission;
-		// this.LoadScene("res://scenes/menu.tscn");
-
+		_missionName = mission.Name;
+		_missionPlanetTarget = mission.planetTarget;
+		_missionReward = mission.reward;
 	}
 
-	public void MissionSucces()
+	public void LandingOn(int planetId)
 	{
-		if(SelectedMission != null)
+		this.PlanetPosition = planetId;
+		this.LoadScene(_planetScene);
+	}
+
+	public void GoInSpace()
+	{
+		LoadScene(_spaceScene);
+	}
+
+	public void Pay(int cost)
+	{
+		this.cash -= cost;
+	}
+
+	// ALL METHOD FOR MISSION CONTROL
+
+    public bool MissionInProgress()
+    {
+        return _missionName != null;
+    }
+
+    public int MissionReward()
+    {
+        return _missionReward;
+    }
+
+    public int MissionPlanetTarget()
+    {
+        return _missionPlanetTarget;
+    }
+
+    public void MissionSucces()
+	{
+		if(MissionInProgress())
 		{
-			this.cash += this.SelectedMission.cash;
-			this.SelectedMission = null;
+			this.cash += _missionReward;
+			ClearMission();
 		}
+	}
+
+	private void ClearMission()
+	{
+		_missionName = null;
+	}
+
+	public void AbortTheMission()
+	{
+		ClearMission();
 	}
 }

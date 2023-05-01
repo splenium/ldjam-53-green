@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://qduhgkf7ayou"]
+
+[ext_resource type="Script" path="res://assets/scripts/SpacePlanet.cs" id="1_qx0a2"]
+[ext_resource type="Texture2D" uid="uid://bg7td2pm1a6pb" path="res://assets/sprites/UglyThingTwo.png" id="2_ekwoq"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="2_vq1r6"]
+[ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="3_86bkp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nl3ed"]
+font = ExtResource("2_vq1r6")
+font_size = 30
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdrd7"]
+radius = 235.257
+
+[sub_resource type="LabelSettings" id="LabelSettings_aad07"]
+font = ExtResource("2_vq1r6")
+font_size = 20
+
+[node name="SpacePlanet" type="Node2D" node_paths=PackedStringArray("PlanetNameLabel", "LandingLabel", "PlanetSprite", "ExitShipPosition")]
+position = Vector2(548, 283)
+script = ExtResource("1_qx0a2")
+PlanetTexture = ExtResource("2_ekwoq")
+PlanetNameLabel = NodePath("CenterContainer/PlanetNameLabel")
+LandingLabel = NodePath("LandingLabel")
+PlanetSprite = NodePath("PlanetSprite")
+ExitShipPosition = NodePath("ExitShipPosition")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = -177.0
+offset_right = 113.0
+offset_bottom = -133.0
+grow_horizontal = 2
+
+[node name="PlanetNameLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "[Planet name]"
+label_settings = SubResource("LabelSettings_nl3ed")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlanetSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_86bkp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pdrd7")
+
+[node name="LandingLabel" type="Label" parent="."]
+offset_left = 155.0
+offset_top = -15.0
+offset_right = 259.0
+offset_bottom = 16.0
+text = "E -  Landing"
+label_settings = SubResource("LabelSettings_aad07")
+
+[node name="ExitShipPosition" type="Node2D" parent="."]
+position = Vector2(134, 118)
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]
