@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://bib1n6wujtt7p"]
 
 [ext_resource type="Script" path="res://assets/scripts/PlanetSceneManager.cs" id="1_i4bn7"]
-[ext_resource type="PackedScene" uid="uid://bfp42nxc04d2l" path="res://assets/prefabs/planets/Fecaloria.tscn" id="2_ox5pk"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/planets/Odorix.tscn" id="3_lppju"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/planets/Etronis.tscn" id="3_xaopi"]
+[ext_resource type="PackedScene" uid="uid://chklyrlwka1ka" path="res://assets/prefabs/planets/Fecaloria.tscn" id="2_ox5pk"]
+[ext_resource type="PackedScene" uid="uid://dlqpo61f41mg4" path="res://assets/prefabs/planets/Odorix.tscn" id="3_lppju"]
+[ext_resource type="PackedScene" uid="uid://tasbo1rji4ra" path="res://assets/prefabs/planets/Etronis.tscn" id="3_xaopi"]
 [ext_resource type="PackedScene" path="res://assets/prefabs/planets/Porcelainus.tscn" id="5_iib11"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
+[ext_resource type="PackedScene" uid="uid://cbho6h8he2jq5" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
 [ext_resource type="Texture2D" uid="uid://crfpdk4roigad" path="res://assets/sprites/Ui/PlanetIcon.png" id="7_yuej3"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="14_44y0g"]
 
