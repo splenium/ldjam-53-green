@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qeteovi856de"]
+[gd_scene load_steps=3 format=3 uid="uid://qeteovi856de"]
 
 [ext_resource type="Script" path="res://assets/scripts/Asteroid.cs" id="1_xxwlj"]
 [ext_resource type="Texture2D" uid="uid://xc5q2gyyi3n6" path="res://assets/sprites/space/meteors/meteorBrown_big1.png" id="2_hnwyr"]
-[ext_resource type="Shape2D" uid="uid://mk420n0kncuo" path="res://ressources/asteroid_cshape_big.tres" id="3_ab0ub"]
 
 [node name="Asteroid" type="Area2D"]
 rotation = 0.00195162
@@ -11,7 +10,7 @@ script = ExtResource("1_xxwlj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hnwyr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = ExtResource("3_ab0ub")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(12.0234, 11.9766, 12.0546, 27.9765, 34.0624, 31.9336, 48.996, -2.09563, 23.9199, -41.0468, -33.08, -40.9355, -47.9804, 10.0937, -22.9219, 40.0448, 14.0566, 28.9726, 8.05073, 25.9843)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

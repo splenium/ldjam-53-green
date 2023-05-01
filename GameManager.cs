@@ -11,7 +11,9 @@ public partial class GameManager : Node
 
 	public int cash { get; set; }
 	public int PlanetPosition { get; set; }
-	public string[] PlanetNames = new string[]
+    public bool IsDeath { get; set; }
+
+    public string[] PlanetNames = new string[]
 	{
 		"Fecaloria",
 		"Odorix",
