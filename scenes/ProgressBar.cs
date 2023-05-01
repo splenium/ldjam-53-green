@@ -11,6 +11,5 @@ public partial class ProgressBar : TextureProgressBar
 	public override void _Process(double delta)
 	{
 		Value = _delivryTimer.TimeLeft;
-		GD.Print(Value);
 	}
 }

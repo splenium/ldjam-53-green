@@ -13,7 +13,9 @@ public partial class GameManager : Node
 
 	public int cash { get; set; }
 	public int PlanetPosition { get; set; }
-	public string[] PlanetNames = new string[]
+    public bool IsDeath { get; set; }
+
+    public string[] PlanetNames = new string[]
 	{
 		"Fecaloria",
 		"Odorix",
@@ -48,6 +50,7 @@ public partial class GameManager : Node
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
 		this.MustShowCreditsFirst = false;
+		this.IsDeath = false;
 	}
 
 	public bool TimeForTheLastTravel()

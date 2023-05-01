@@ -43,6 +43,7 @@ public partial class mission_failled_screen : Control
         {
             if (_isOnRetry)
             {
+                _gameManager.IsDeath = false;
                 _gameManager.LandingOn(_gameManager.PlanetPosition);
             }
             else
