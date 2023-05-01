@@ -3,4 +3,9 @@
 [ext_resource type="Shader" path="res://assets/shaders/Tree.gdshader" id="1_hn33c"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_hn33c")
+shader_parameter/_barkColor = null
+shader_parameter/_leafColor = Vector4(1, 0, 0, 0)
+shader_parameter/_branchAngleFactor = 0.3
+shader_parameter/_seed = null
