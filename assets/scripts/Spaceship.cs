@@ -8,6 +8,8 @@ public partial class Spaceship : CharacterBody2D
     private float _maxSpeed = 350f;
     [Export]
     private float _rotationSpeed = 125f;
+    [Export]
+    private float _breakFactor = 0.92f;
 
 
     private Sprite2D _reactor;
@@ -50,7 +52,6 @@ public partial class Spaceship : CharacterBody2D
             }
         }
     }
-
     public override void _PhysicsProcess(double delta)
     {
         if (_gameManager.IsDeath)
@@ -59,15 +60,14 @@ public partial class Spaceship : CharacterBody2D
         }
         else
         {
-            Vector2 input_vector = new(0, Input.GetAxis("forward", "backward"));
-        
+            Vector2 input_vector = new(0, -Input.GetActionStrength("forward"));
+            
             Velocity += input_vector.Rotated(Rotation) * _acceleration;
             Velocity = Velocity.LimitLength(_maxSpeed);
             if (input_vector.Y < 0)
             {
                 _reactor.Show();
             }
-
             if (Input.IsActionPressed("right"))
             {
                 Rotate((float)Mathf.DegToRad(_rotationSpeed * delta));
@@ -81,6 +81,8 @@ public partial class Spaceship : CharacterBody2D
                 _reactor.Hide();
                 Velocity = Velocity.MoveToward(Vector2.Zero, 3);
             }
+            if (Input.IsActionPressed("backward"))
+                Velocity *= _breakFactor;
             MoveAndSlide();
         }
 

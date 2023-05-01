@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://be6v8uu06s4ve"]
 
 [ext_resource type="Script" path="res://assets/scripts/AsteroidsManager.cs" id="1_o733m"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/sun.tscn" id="1_s4uyw"]
+[ext_resource type="PackedScene" uid="uid://cnt42u1esyvyr" path="res://assets/prefabs/sun.tscn" id="1_s4uyw"]
 [ext_resource type="Texture2D" uid="uid://xhy55y1223t4" path="res://assets/sprites/UglyThing.png" id="2_3onkj"]
 [ext_resource type="PackedScene" uid="uid://bfe1k0va6oc0" path="res://assets/prefabs/Asteroids/Asteroid1.tscn" id="2_briab"]
 [ext_resource type="PackedScene" uid="uid://qduhgkf7ayou" path="res://assets/prefabs/SpacePlanet.tscn" id="2_lvf8k"]
