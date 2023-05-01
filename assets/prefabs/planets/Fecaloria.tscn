@@ -27,14 +27,15 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xuyba"]
 gradient = SubResource("Gradient_hk26n")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
-size = Vector2(739, 145.558)
-
 [sub_resource type="LabelSettings" id="LabelSettings_pqf5p"]
 font = ExtResource("17_tsml0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qsty"]
+size = Vector2(739, 145.558)
+
 [node name="Fecaloria" type="Node2D"]
 texture_filter = 1
+scale = Vector2(1.00163, 1.00173)
 script = ExtResource("1_xxo2e")
 
 [node name="Backbackground" type="Sprite2D" parent="."]
@@ -43,7 +44,7 @@ texture = SubResource("GradientTexture1D_xuyba")
 
 [node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
 material = ExtResource("1_6okic")
-position = Vector2(282, 345)
+position = Vector2(835.812, 339.672)
 scale = Vector2(30, 30)
 texture = ExtResource("2_togc3")
 script = ExtResource("3_643s2")
@@ -70,9 +71,71 @@ scale = Vector2(3, 3)
 texture = ExtResource("5_w7ju1")
 
 [node name="Rocket" parent="." instance=ExtResource("7_3kwib")]
+position = Vector2(525.812, 445.672)
+
+[node name="MissionPanel" type="Sprite2D" parent="."]
+position = Vector2(903.243, 350.057)
+scale = Vector2(2, 2)
+texture = ExtResource("15_ruqex")
+script = ExtResource("16_xqsqf")
+Speed = 6.0
+Amplitude = 0.07
+Seed = 2.0
+
+[node name="Label" type="Label" parent="MissionPanel"]
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "Mission"
+label_settings = SubResource("LabelSettings_pqf5p")
+
+[node name="thruster" type="Sprite2D" parent="MissionPanel"]
+material = ExtResource("18_j3dvw")
+position = Vector2(-56, 3)
+scale = Vector2(1.12, 2.12)
+texture = ExtResource("19_d3och")
+
+[node name="thruster2" type="Sprite2D" parent="MissionPanel"]
+material = ExtResource("18_j3dvw")
+position = Vector2(56, 3)
+scale = Vector2(1.32, 2.24)
+texture = ExtResource("19_d3och")
+
+[node name="VillagePanel" type="Sprite2D" parent="."]
+position = Vector2(304.425, 461.974)
+rotation = 3.14159
+scale = Vector2(2, -2)
+texture = ExtResource("15_ruqex")
+script = ExtResource("16_xqsqf")
+Speed = 4.0
+Amplitude = 0.09
+
+[node name="Node2D" type="Node2D" parent="VillagePanel"]
+scale = Vector2(-1, 1)
+
+[node name="Label" type="Label" parent="VillagePanel/Node2D"]
+offset_left = -30.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 15.0
+text = "Village"
+label_settings = SubResource("LabelSettings_pqf5p")
+
+[node name="thruster" type="Sprite2D" parent="VillagePanel"]
+material = ExtResource("18_j3dvw")
+position = Vector2(-56, 3)
+scale = Vector2(1.12, 2.12)
+texture = ExtResource("19_d3och")
+
+[node name="thruster2" type="Sprite2D" parent="VillagePanel"]
+material = ExtResource("18_j3dvw")
+position = Vector2(56, 3)
+scale = Vector2(1.32, 2.24)
+texture = ExtResource("19_d3och")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_22e4q")]
-position = Vector2(298, 518)
+position = Vector2(851.812, 512.672)
 scale = Vector2(4, 4)
 wall_min_slide_angle = 1.34739
 floor_stop_on_slope = true
@@ -148,37 +211,8 @@ position = Vector2(-527, 508)
 
 [node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
 material = ExtResource("17_ooarg")
-position = Vector2(292, 337)
+position = Vector2(845.812, 331.672)
 scale = Vector2(30, 30)
 texture = ExtResource("2_togc3")
 script = ExtResource("3_643s2")
 Attached = NodePath("../CharacterBody2D")
-
-[node name="Panel" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(124, 344)
-texture = ExtResource("15_ruqex")
-script = ExtResource("16_xqsqf")
-Speed = 4.0
-Amplitude = 0.05
-
-[node name="Label" type="Label" parent="Panel/Sprite2D"]
-offset_left = -30.0
-offset_top = -8.0
-offset_right = 32.0
-offset_bottom = 15.0
-text = "Mission"
-label_settings = SubResource("LabelSettings_pqf5p")
-
-[node name="thruster" type="Sprite2D" parent="Panel/Sprite2D"]
-material = ExtResource("18_j3dvw")
-position = Vector2(-56, 3)
-scale = Vector2(1.12, 2.12)
-texture = ExtResource("19_d3och")
-
-[node name="thruster2" type="Sprite2D" parent="Panel/Sprite2D"]
-material = ExtResource("18_j3dvw")
-position = Vector2(56, 3)
-scale = Vector2(1.32, 2.24)
-texture = ExtResource("19_d3och")

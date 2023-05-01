@@ -10,6 +10,13 @@ public partial class Actor : Area2D
     [Export]
     private Label labelName;
     private GameManager _gameManager { get; set; }
+    [Export]
+    private bool LookLeft;
+    [Export]
+    private Node2D Interface;
+
+    private Vector2 _baseScale;
+    private Vector2 _interfaceBaseScale;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -17,6 +24,9 @@ public partial class Actor : Area2D
         _gameManager = GetNode<GameManager>("/root/GameManager");
         deliveryLabel.Visible = false;
         labelName.Text = _name;
+
+        _interfaceBaseScale = Interface.Scale;
+        _baseScale = this.Scale;
 	}
 
     private void setLabelVisible(bool visible, Node2D collided)
@@ -39,6 +49,16 @@ public partial class Actor : Area2D
         {
             _gameManager.MissionSucces();
             this.deliveryLabel.Visible = false;
+        }
+
+        if (LookLeft)
+        {
+            Interface.Scale = new(_interfaceBaseScale.X * -1, _interfaceBaseScale.Y);
+            this.Scale = new(_baseScale.X * -1, _baseScale.Y);
+        } else
+        {
+            Interface.Scale = _interfaceBaseScale;
+            this.Scale = _baseScale;
         }
     }
 
