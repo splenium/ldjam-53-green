@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dt2f4kdlnfui7" path="res://assets/UI/Icon.png" id="4_7drx7"]
 [ext_resource type="Script" path="res://assets/scripts/SetMenuMask.cs" id="5_61oat"]
 [ext_resource type="Texture2D" uid="uid://bkocad8x44cbd" path="res://assets/UI/IconMask.png" id="6_wnej1"]
-[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.ttf" id="7_0c80n"]
+[ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="7_0c80n"]
 [ext_resource type="AudioStream" uid="uid://ckm51mfbyqv14" path="res://assets/sounds/Cinematic Documentary Romantic by Infraction.mp3" id="8_0a66k"]
 [ext_resource type="Texture2D" uid="uid://lm4bpp8gpoec" path="res://assets/UI/Credits.png" id="9_ljvis"]
 [ext_resource type="AudioStream" uid="uid://dc461g6lukdpd" path="res://assets/sounds/416179__inspectorj__book-flipping-through-pages-a.wav" id="10_rhgf0"]
