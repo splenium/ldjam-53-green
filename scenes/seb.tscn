@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqajmd2vjete1"]
+[gd_scene load_steps=10 format=3 uid="uid://cqajmd2vjete1"]
 
 [ext_resource type="PackedScene" uid="uid://d2c15v0lmpim6" path="res://assets/prefabs/Ground.tscn" id="2_2xw6m"]
 [ext_resource type="PackedScene" uid="uid://dp4lgex5gobjt" path="res://assets/prefabs/PlanetPlayer.tscn" id="2_ijweu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://assets/scripts/TreeVariation.cs" id="5_j3enw"]
 [ext_resource type="Material" uid="uid://dehqsyafejri" path="res://assets/shaders/TreeShaderMat.tres" id="5_y81vy"]
 [ext_resource type="Material" uid="uid://djanpog8u0imw" path="res://assets/shaders/EnvironnementShaderMat.tres" id="7_ggwro"]
+[ext_resource type="PackedScene" uid="uid://3duil3i2ursv" path="res://assets/prefabs/planet_prefab.tscn" id="8_mearw"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oun30"]
 
@@ -56,3 +57,5 @@ offset_top = -88.1
 offset_right = -62.2
 offset_bottom = -48.1
 scale = Vector2(9.05517, 7.3251)
+
+[node name="PlanetPrefab" parent="." instance=ExtResource("8_mearw")]
