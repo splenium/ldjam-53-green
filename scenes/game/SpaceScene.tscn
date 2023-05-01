@@ -48,6 +48,7 @@ PlanetTexture = ExtResource("6_64dne")
 
 [node name="PlayerSpaceships" parent="." instance=ExtResource("2_rand8")]
 position = Vector2(576, 326)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpaceships"]
 

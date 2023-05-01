@@ -50,6 +50,7 @@ public partial class GameManager : Node
 		this.cash = _startCash;
 		this.PlanetPosition = 0;
 		this.MustShowCreditsFirst = false;
+		this.IsDeath = false;
 	}
 
 	public bool TimeForTheLastTravel()
