@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_u4bpg"]
 [ext_resource type="Material" uid="uid://criasgmighl7f" path="res://assets/shaders/landscapes/landscape01Bis/Landscape01Bis_Back_ShaderMat.tres" id="2_y6xu0"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="3_y5oi0"]
-[ext_resource type="Script" path="res://scenes/game/Follow.cs" id="4_jaxkp"]
+[ext_resource type="Script" path="res://assets/scripts/Follow.cs" id="4_jaxkp"]
 [ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="5_7ya3m"]
 [ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="6_78a4e"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="7_dsiop"]

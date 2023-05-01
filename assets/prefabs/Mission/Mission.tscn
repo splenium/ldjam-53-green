@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl2qylnad02qo"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://assets/prefabs/Mission/Mission.cs" id="1_td2bv"]
+[ext_resource type="Script" path="res://assets/scripts/Mission.cs" id="1_td2bv"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_pg8uj"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="3_gyxvx"]
 [ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="4_mwesq"]

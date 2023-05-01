@@ -53,8 +53,8 @@ public partial class Actor : Area2D
 
         if (LookLeft)
         {
-            Interface.Scale = new(_interfaceBaseScale.X * -1, _interfaceBaseScale.Y);
-            this.Scale = new(_baseScale.X * -1, _baseScale.Y);
+            Interface.Scale = new Vector2(_interfaceBaseScale.X * -1, _interfaceBaseScale.Y);
+            this.Scale = new Vector2(_baseScale.X * -1, _baseScale.Y);
         } else
         {
             Interface.Scale = _interfaceBaseScale;
@@ -69,7 +69,7 @@ public partial class Actor : Area2D
             this.deliveryLabel.Text = "E  -  Give   package";
         } else
         {
-            this.deliveryLabel.Text = "Nothing  to  deliver";
+            this.deliveryLabel.Text = "Nothing   to   deliver";
         }
         this.setLabelVisible(true, body);
     }

@@ -24,7 +24,7 @@ public partial class PersoPrefab : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 
-		Vector2 move = new(0, gravity);
+		Vector2 move = new Vector2(0, gravity);
 		if (Input.IsActionPressed("right"))
 		{
 			AnimatedSprite.Scale = new Vector2(1, 1);

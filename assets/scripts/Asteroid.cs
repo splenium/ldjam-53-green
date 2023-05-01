@@ -3,14 +3,12 @@ using System;
 
 public partial class Asteroid : Area2D
 {
-    [Export]
-    private AsteroidSize _size = AsteroidSize.Large;
 
     private CanvasLayer _canvasLayer;
 
     private float speed;
     private enum AsteroidSize { Large, Medium, Small }
-    private Vector2 movementVector = new(0, -1);
+    private Vector2 movementVector = new Vector2(0, -1);
 
     private Sprite2D _sprite;
     private Camera2D _camera;

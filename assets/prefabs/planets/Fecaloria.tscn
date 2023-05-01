@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnrwg7iptsy06"]
+[gd_scene load_steps=24 format=3 uid="uid://37xwxtbollwp"]
 
 [ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_xxo2e"]
 [ext_resource type="Texture2D" uid="uid://p08ghl065lgu" path="res://assets/UI/SimpleBorder.png" id="2_togc3"]
-[ext_resource type="Script" path="res://scenes/game/Follow.cs" id="3_643s2"]
+[ext_resource type="Script" path="res://assets/scripts/Follow.cs" id="3_643s2"]
 [ext_resource type="Material" uid="uid://dw8qjwcskyh88" path="res://assets/shaders/LayerOpacityShaderMat.tres" id="4_y8m1f"]
 [ext_resource type="Texture2D" uid="uid://b05cqcwsbx6lj" path="res://assets/sprites/Landscape3.png" id="5_w7ju1"]
 [ext_resource type="Script" path="res://assets/scripts/DoTheParallax.cs" id="6_8mxgf"]
@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="16_xqsqf"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="17_tsml0"]
-[ext_resource type="Material" path="res://assets/shaders/ReactorShaderMat.tres" id="18_j3dvw"]
+[ext_resource type="Material" uid="uid://b00ofare35uwc" path="res://assets/shaders/ReactorShaderMat.tres" id="18_j3dvw"]
 [ext_resource type="Texture2D" uid="uid://6io7tedu8ih3" path="res://assets/sprites/Indicator.png" id="19_d3och"]
 
 [sub_resource type="Gradient" id="Gradient_hk26n"]
@@ -146,10 +146,10 @@ gravity = 100.0
 offset = Vector2(0, -150)
 
 [node name="Box" parent="." node_paths=PackedStringArray("Rocket") instance=ExtResource("12_rhght")]
-position = Vector2(1781, 561)
+position = Vector2(1265.94, 586.984)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
-rewards = PackedInt32Array(15, 25, 30)
+rewards = PackedInt32Array(10, 20, 60)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(0, 1, 2)
 
@@ -207,7 +207,7 @@ position = Vector2(155.333, 1.66667)
 texture = ExtResource("14_g7ki8")
 
 [node name="Alien" parent="." instance=ExtResource("15_ilccn")]
-position = Vector2(-527, 508)
+position = Vector2(87.8568, 525.092)
 
 [node name="Forground" type="Sprite2D" parent="." node_paths=PackedStringArray("Attached")]
 material = ExtResource("17_ooarg")

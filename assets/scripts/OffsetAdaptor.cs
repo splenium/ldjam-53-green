@@ -15,6 +15,6 @@ public partial class OffsetAdaptor : MarginContainer
 
 	private void SizeChange()
 	{
-		this.PivotOffset = new(this.Size.X, this.PivotOffset.Y);
+		this.PivotOffset = new Vector2(this.Size.X, this.PivotOffset.Y);
 	}
 }
