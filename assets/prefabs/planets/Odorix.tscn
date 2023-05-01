@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=18 format=3 uid="uid://cuo457g1awqtx"]
 
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_d1sri"]
 [ext_resource type="Material" uid="uid://criasgmighl7f" path="res://assets/shaders/landscapes/landscape01Bis/Landscape01Bis_Back_ShaderMat.tres" id="1_tpe36"]
@@ -67,7 +67,7 @@ offset = Vector2(0, -150)
 position = Vector2(618, 560)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  letter  to  Fartropin", "Give  package  to  Troupix", "Give  special  package  to  Bubonis")
-rewards = PackedInt32Array(5, 50, 75)
+rewards = PackedInt32Array(15, 50, 70)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(1, 0, 2)
 

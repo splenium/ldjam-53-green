@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://37xwxtbollwp"]
 
 [ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_xxo2e"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="13_fdo4j"]
 [ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="14_g7ki8"]
 [ext_resource type="PackedScene" uid="uid://c7spf4e7lq8x7" path="res://assets/prefabs/NPC/alien.tscn" id="15_ilccn"]
-[ext_resource type="Texture2D" uid="uid://b4rbsa4vienvy" path="res://assets/sprites/PanelDirection.png" id="15_ruqex"]
+[ext_resource type="Texture2D" uid="uid://cqxujenx4x737" path="res://assets/sprites/PanelDirection.png" id="15_ruqex"]
 [ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="16_xqsqf"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="17_tsml0"]
@@ -149,7 +149,7 @@ offset = Vector2(0, -150)
 position = Vector2(1265.94, 586.984)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
-rewards = PackedInt32Array(15, 25, 30)
+rewards = PackedInt32Array(10, 20, 60)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(0, 1, 2)
 
