@@ -32,8 +32,6 @@ public partial class Box : Area2D
         MissionSelection.Visible = false;
         _gameManager = GetNode<GameManager>("/root/GameManager");
 
-        CheckAllOk();
-
         if(_gameManager.TimeForTheLastTravel())
         {
             // The last mission
@@ -49,17 +47,6 @@ public partial class Box : Area2D
             }
         }
 
-    }
-
-    private void CheckAllOk()
-    {
-        var n = labels.Length;
-        if(n != rewards.Length || n != keys.Length || n != _planetTarget.Length)
-        {
-            GD.PrintErr("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
-            GD.PrintErr("label: " + n + ", rewards: " + rewards.Length + ", keys: " + keys.Length + ", planetTarget:" + _planetTarget.Length);
-            throw new Exception("Impossible to parse collection labels, rewards, keys and planetTarget must have the same size !");
-        }
     }
 
     private void SetLastMission()
