@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://37xwxtbollwp" path="res://assets/prefabs/planets/Fecaloria.tscn" id="2_ox5pk"]
 [ext_resource type="PackedScene" uid="uid://cuo457g1awqtx" path="res://assets/prefabs/planets/Odorix.tscn" id="3_lppju"]
 [ext_resource type="PackedScene" uid="uid://c7qttdwfh886" path="res://assets/prefabs/planets/Etronis.tscn" id="3_xaopi"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/planets/Porcelainus.tscn" id="5_iib11"]
+[ext_resource type="PackedScene" uid="uid://6jiswmf6pr4n" path="res://assets/prefabs/planets/Porcelainus.tscn" id="5_iib11"]
 [ext_resource type="PackedScene" uid="uid://cbho6h8he2jq5" path="res://assets/prefabs/Interface/general_ui.tscn" id="5_y53ft"]
 [ext_resource type="Texture2D" uid="uid://crfpdk4roigad" path="res://assets/sprites/Ui/PlanetIcon.png" id="7_yuej3"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="14_44y0g"]
@@ -28,7 +28,6 @@ PlanetLabelName = NodePath("HUD/PlanetName/HBoxContainer/MarginContainer/PlanetN
 [node name="Odorix" parent="PlanetsContainer" instance=ExtResource("3_lppju")]
 
 [node name="Porcelainus" parent="PlanetsContainer" instance=ExtResource("5_iib11")]
-visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
