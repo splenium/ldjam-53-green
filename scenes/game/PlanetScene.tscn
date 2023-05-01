@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://crh312uf6t70f"]
+[gd_scene load_steps=7 format=3 uid="uid://7rn7bg3lod18"]
 
 [ext_resource type="Script" path="res://assets/scripts/PlanetSceneManager.cs" id="1_i4bn7"]
 [ext_resource type="PackedScene" uid="uid://bk6dvpgttw10i" path="res://assets/prefabs/planets/fartopia.tscn" id="2_ox5pk"]

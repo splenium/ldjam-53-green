@@ -27,6 +27,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="PlayerSpaceships" parent="." instance=ExtResource("2_eweg3")]
+visible = false
 position = Vector2(576, 324)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpaceships"]
