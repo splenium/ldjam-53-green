@@ -16,11 +16,11 @@ public partial class TreeVariation : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        var shaderMat = TexRect.Material as ShaderMaterial;
-        shaderMat.SetShaderParameter("_barkColor", BarkColor);
-        shaderMat.SetShaderParameter("_leafColor", LeafColor);
-        shaderMat.SetShaderParameter("_branchAngleFactor", BranchAngleFactor);
-        shaderMat.SetShaderParameter("_seed", this.Position.X);
+        //var shaderMat = TexRect.Material as ShaderMaterial;
+        //shaderMat.SetShaderParameter("_barkColor", BarkColor);
+        //shaderMat.SetShaderParameter("_leafColor", LeafColor);
+        //shaderMat.SetShaderParameter("_branchAngleFactor", BranchAngleFactor);
+        //shaderMat.SetShaderParameter("_seed", this.Position.X);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
