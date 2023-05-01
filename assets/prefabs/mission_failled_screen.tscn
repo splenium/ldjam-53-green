@@ -1,15 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dte4yudkm2hfv"]
+[gd_scene load_steps=6 format=3 uid="uid://dte4yudkm2hfv"]
 
 [ext_resource type="Script" path="res://assets/scripts/mission_failled_screen.cs" id="1_08o8d"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="1_q16ac"]
-[ext_resource type="Texture2D" uid="uid://cs73u5tg6ajyt" path="res://assets/UI/BackgroundMenu.png" id="2_0c482"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fharv"]
-bg_color = Color(0.247059, 0.247059, 0.247059, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+[ext_resource type="Texture2D" uid="uid://dqmdt8rvybq1q" path="res://assets/UI/SimpleBorder2.png" id="2_8cvkb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cj36f"]
 font = ExtResource("1_q16ac")
@@ -29,130 +22,90 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_08o8d")
-LabelRetry = NodePath("TextureRect/GridContainer/MarginContainer/TickRetry")
-LabelQuit = NodePath("TextureRect/GridContainer/MarginContainer3/TickQuit")
+LabelRetry = NodePath("GridContainer/MarginContainer/TickRetry")
+LabelQuit = NodePath("GridContainer/MarginContainer3/TickQuit")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(15, 50)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 2
+offset_left = -194.0
+offset_top = -123.0
+offset_right = -179.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(103.941, 20.1524)
 color = Color(0, 0, 0, 0.72549)
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -236.0
-offset_right = 380.0
-offset_bottom = 242.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fharv")
-
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -102.0
-offset_top = -228.0
-offset_right = 98.0
-offset_bottom = -178.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_q16ac")
-text = "Retry mission"
-
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -237.0
-offset_right = 382.0
-offset_bottom = 242.0
+texture_filter = 1
+layout_mode = 2
+offset_left = 359.0
+offset_top = 128.0
+offset_right = 459.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0c482")
+scale = Vector2(4.37359, 3.38008)
+texture = ExtResource("2_8cvkb")
 expand_mode = 2
-stretch_mode = 1
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -164.0
-offset_top = 61.0
-offset_right = 192.0
-offset_bottom = 110.0
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 393.0
+offset_top = 147.0
+offset_right = 761.0
+offset_bottom = 196.0
 grow_horizontal = 2
-text = "Delivry failled"
+text = "delivery   failed"
 label_settings = SubResource("LabelSettings_cj36f")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="GridContainer" type="GridContainer" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -46.0
-offset_right = 128.0
-offset_bottom = 46.0
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 494.0
+offset_top = 292.0
+offset_right = 640.0
+offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="TickRetry" type="Label" parent="TextureRect/GridContainer/MarginContainer"]
+[node name="TickRetry" type="Label" parent="GridContainer/MarginContainer"]
 layout_mode = 2
 text = "X"
 label_settings = SubResource("LabelSettings_0lom6")
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
 layout_mode = 2
 
-[node name="Deliver" type="Label" parent="TextureRect/GridContainer/MarginContainer2"]
+[node name="Deliver" type="Label" parent="GridContainer/MarginContainer2"]
 layout_mode = 2
 text = "retry"
 label_settings = SubResource("LabelSettings_0lom6")
 
-[node name="MarginContainer3" type="MarginContainer" parent="TextureRect/GridContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="TickQuit" type="Label" parent="TextureRect/GridContainer/MarginContainer3"]
+[node name="TickQuit" type="Label" parent="GridContainer/MarginContainer3"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_0lom6")
 
-[node name="MarginContainer4" type="MarginContainer" parent="TextureRect/GridContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="GridContainer"]
 layout_mode = 2
 
-[node name="Expeditors" type="Label" parent="TextureRect/GridContainer/MarginContainer4"]
+[node name="Expeditors" type="Label" parent="GridContainer/MarginContainer4"]
 layout_mode = 2
 text = "Quit"
 label_settings = SubResource("LabelSettings_0lom6")
