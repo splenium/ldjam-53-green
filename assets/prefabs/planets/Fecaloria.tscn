@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bfp42nxc04d2l"]
+[gd_scene load_steps=26 format=3 uid="uid://37xwxtbollwp"]
 
 [ext_resource type="Material" uid="uid://f1ldetq1ftbk" path="res://assets/shaders/landscapes/landscape01/Landscape01_Back_ShaderMat.tres" id="1_6okic"]
 [ext_resource type="Script" path="res://assets/scripts/GroundPlanet.cs" id="1_xxo2e"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tdxjvi8p1ah" path="res://assets/prefabs/Landscapes/landscape_01.tscn" id="13_fdo4j"]
 [ext_resource type="Texture2D" uid="uid://3281hsbhyvw6" path="res://assets/sprites/Cloud.png" id="14_g7ki8"]
 [ext_resource type="PackedScene" uid="uid://c7spf4e7lq8x7" path="res://assets/prefabs/NPC/alien.tscn" id="15_ilccn"]
-[ext_resource type="Texture2D" uid="uid://b4rbsa4vienvy" path="res://assets/sprites/PanelDirection.png" id="15_ruqex"]
+[ext_resource type="Texture2D" uid="uid://cqxujenx4x737" path="res://assets/sprites/PanelDirection.png" id="15_ruqex"]
 [ext_resource type="Script" path="res://assets/scripts/HoveringScript.cs" id="16_xqsqf"]
 [ext_resource type="Material" uid="uid://vhbocsa73ne1" path="res://assets/shaders/landscapes/landscape01/Landscape01_Front_ShaderMat.tres" id="17_ooarg"]
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="17_tsml0"]
@@ -151,7 +151,7 @@ offset = Vector2(0, -150)
 position = Vector2(1265.94, 586.984)
 Rocket = NodePath("../Rocket")
 labels = PackedStringArray("Give  the  letter  to  Troupix", "Give  the  package  to  Fartropin ", "Give  Troupix  gift  to  Bubonis")
-rewards = PackedInt32Array(15, 25, 30)
+rewards = PackedInt32Array(10, 20, 60)
 keys = PackedStringArray("E", "R", "T")
 planetTarget = PackedInt32Array(0, 1, 2)
 
@@ -214,294 +214,245 @@ position = Vector2(87.8568, 525.092)
 [node name="Toxic" type="Sprite2D" parent="."]
 position = Vector2(1020.34, 596.967)
 rotation = 0.24327
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic2" type="Sprite2D" parent="."]
 position = Vector2(1156.11, 594.968)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic3" type="Sprite2D" parent="."]
 position = Vector2(1123.17, 593.973)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic4" type="Sprite2D" parent="."]
 position = Vector2(1142.14, 546.055)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic7" type="Sprite2D" parent="."]
 position = Vector2(1855.57, 567.563)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic8" type="Sprite2D" parent="."]
 position = Vector2(1822.62, 566.568)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic9" type="Sprite2D" parent="."]
 position = Vector2(1841.59, 518.657)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic10" type="Sprite2D" parent="."]
 position = Vector2(1918.47, 556.58)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic11" type="Sprite2D" parent="."]
 position = Vector2(1885.52, 555.585)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic12" type="Sprite2D" parent="."]
 position = Vector2(1904.49, 507.675)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic13" type="Sprite2D" parent="."]
 position = Vector2(1890.51, 474.722)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic14" type="Sprite2D" parent="."]
 position = Vector2(1857.57, 473.727)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic15" type="Sprite2D" parent="."]
 position = Vector2(1876.54, 425.817)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic16" type="Sprite2D" parent="."]
 position = Vector2(1982.36, 550.59)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic17" type="Sprite2D" parent="."]
 position = Vector2(1949.42, 549.595)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic18" type="Sprite2D" parent="."]
 position = Vector2(1968.39, 501.686)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic19" type="Sprite2D" parent="."]
 position = Vector2(1943.43, 459.747)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic20" type="Sprite2D" parent="."]
 position = Vector2(1910.48, 458.752)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic21" type="Sprite2D" parent="."]
 position = Vector2(1929.45, 410.843)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic22" type="Sprite2D" parent="."]
 position = Vector2(1914.47, 380.884)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic23" type="Sprite2D" parent="."]
 position = Vector2(1881.53, 379.889)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic24" type="Sprite2D" parent="."]
 position = Vector2(1900.5, 331.979)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic25" type="Sprite2D" parent="."]
 position = Vector2(1885.52, 427.803)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic26" type="Sprite2D" parent="."]
 position = Vector2(1852.58, 426.808)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic27" type="Sprite2D" parent="."]
 position = Vector2(1871.54, 378.898)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic28" type="Sprite2D" parent="."]
 position = Vector2(1871.54, 479.714)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic29" type="Sprite2D" parent="."]
 position = Vector2(1838.6, 478.719)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic30" type="Sprite2D" parent="."]
 position = Vector2(1857.57, 430.808)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic34" type="Sprite2D" parent="."]
 position = Vector2(2059.24, 516.651)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic35" type="Sprite2D" parent="."]
 position = Vector2(2078.21, 468.743)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic36" type="Sprite2D" parent="."]
 position = Vector2(2078.21, 569.557)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic37" type="Sprite2D" parent="."]
 position = Vector2(2045.26, 568.562)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic38" type="Sprite2D" parent="."]
 position = Vector2(2064.23, 520.653)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic39" type="Sprite2D" parent="."]
 position = Vector2(2082.2, 542.606)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic40" type="Sprite2D" parent="."]
 position = Vector2(2101.17, 494.698)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic41" type="Sprite2D" parent="."]
 position = Vector2(2101.17, 595.511)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic42" type="Sprite2D" parent="."]
 position = Vector2(2068.22, 594.516)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic43" type="Sprite2D" parent="."]
 position = Vector2(2087.19, 546.608)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic44" type="Sprite2D" parent="."]
 position = Vector2(2200.01, 545.599)
 rotation = -0.0639649
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic45" type="Sprite2D" parent="."]
 position = Vector2(2218.98, 497.693)
 rotation = -0.162514
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic46" type="Sprite2D" parent="."]
 position = Vector2(2218.98, 598.505)
 rotation = -0.0639649
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic47" type="Sprite2D" parent="."]
 position = Vector2(2186.03, 597.51)
 rotation = -0.0639649
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic48" type="Sprite2D" parent="."]
 position = Vector2(2205, 549.603)
 rotation = -0.162514
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic31" type="Sprite2D" parent="."]
 position = Vector2(1871.54, 479.714)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic32" type="Sprite2D" parent="."]
 position = Vector2(1838.6, 478.719)
 rotation = 0.082886
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic33" type="Sprite2D" parent="."]
 position = Vector2(1857.57, 430.808)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic5" type="Sprite2D" parent="."]
 position = Vector2(304.504, 578)
 rotation = -0.0156632
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="Toxic6" type="Sprite2D" parent="."]
 position = Vector2(1495.56, 579.997)
 rotation = 0.207835
-scale = Vector2(1, 1)
 texture = ExtResource("20_skg6h")
 
 [node name="EyeCreature" parent="." instance=ExtResource("20_u62a6")]
 position = Vector2(951.174, 411.395)
-scale = Vector2(1, 1)
 
 [node name="EyeCreature2" parent="." instance=ExtResource("20_u62a6")]
 position = Vector2(1349.8, 320.446)
