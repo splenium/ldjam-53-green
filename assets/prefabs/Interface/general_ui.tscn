@@ -1,12 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhlsdvcjhnpmb"]
+[gd_scene load_steps=8 format=3 uid="uid://dhlsdvcjhnpmb"]
 
 [ext_resource type="FontFile" uid="uid://bda4nsl7usbve" path="res://assets/fonts/arcade_classic_2/ARCADECLASSIC.TTF" id="1_6rpei"]
 [ext_resource type="Script" path="res://assets/prefabs/Interface/GeneralUI.cs" id="1_f1k6m"]
 [ext_resource type="Texture2D" uid="uid://cvtlgdeys1nfo" path="res://assets/sprites/SpaceCreditsWhite.png" id="2_rhgmc"]
+[ext_resource type="Script" path="res://assets/prefabs/Interface/MissionIndicator.cs" id="4_jlim0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uums2"]
 font = ExtResource("1_6rpei")
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_en2hd"]
+font = ExtResource("1_6rpei")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2u4k"]
+font = ExtResource("1_6rpei")
+font_color = Color(0.933333, 0.537255, 0.792157, 1)
 
 [node name="GeneralUI" type="Control" node_paths=PackedStringArray("CashLabel")]
 texture_filter = 1
@@ -55,3 +63,31 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource("2_rhgmc")
 stretch_mode = 5
+
+[node name="MissionInfo" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MissionIndicator" type="HBoxContainer" parent="MissionInfo" node_paths=PackedStringArray("planetLabel")]
+layout_mode = 2
+script = ExtResource("4_jlim0")
+planetLabel = NodePath("TargetPlanetLabel")
+
+[node name="Label" type="Label" parent="MissionInfo/MissionIndicator"]
+layout_mode = 2
+text = "Your  delivery  target  is   on  "
+label_settings = SubResource("LabelSettings_en2hd")
+
+[node name="TargetPlanetLabel" type="Label" parent="MissionInfo/MissionIndicator"]
+layout_mode = 2
+text = "Fecaloria"
+label_settings = SubResource("LabelSettings_f2u4k")

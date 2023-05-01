@@ -38,7 +38,7 @@ public partial class GameManager : Node
 
     // Called when the node enters the scene tree for the first time.
 
-    private int _startCash = 200;
+    private int _startCash = 0;
 	public override void _Ready()
 	{
 		this.NewGame();
@@ -62,6 +62,12 @@ public partial class GameManager : Node
 	{
 		GetTree().ChangeSceneToFile(scenePath);
 	}
+
+	public bool CanLandOnPlanet(int i)
+	{
+		bool isFinalPlanet = i == lastMissionPlanet;
+		return ((!IsFinalMission() && !isFinalPlanet) || (IsFinalMission() && isFinalPlanet));
+    }
 
 	public void LoadMenu()
 	{

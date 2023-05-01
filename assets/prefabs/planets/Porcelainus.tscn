@@ -24,6 +24,7 @@ gradient = SubResource("Gradient_hk26n")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo5pj"]
 font = ExtResource("9_ql35q")
+font_size = 12
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_van6s"]
 radius = 29.533
@@ -67,7 +68,7 @@ offset_left = -185.667
 offset_top = -64.0
 offset_right = 164.333
 offset_bottom = -28.0
-text = "E - Open the misterious package"
+text = "E  -  Open   the   misterious   package"
 label_settings = SubResource("LabelSettings_mo5pj")
 
 [node name="RockIt" type="Sprite2D" parent="CrashedShip"]

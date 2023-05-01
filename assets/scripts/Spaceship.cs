@@ -2,9 +2,12 @@ using Godot;
 
 public partial class Spaceship : CharacterBody2D
 {
+    [Export]
     private float _acceleration = 10f;
+    [Export]
     private float _maxSpeed = 350f;
-    private double _rotationSpeed = 100f;
+    [Export]
+    private float _rotationSpeed = 125f;
 
     private GameManager _gameManager;
 
@@ -13,17 +16,35 @@ public partial class Spaceship : CharacterBody2D
     [Export]
     private Node2D IndicatorContainer;
 
+    private PackedScene IndicatorPrefabs;
+
 
 
     public override void _Ready()
     {
 
         _gameManager = GetNode<GameManager>("/root/GameManager");
+        IndicatorPrefabs = ResourceLoader.Load("res://assets/prefabs/indicator.tscn") as PackedScene;
+        RegenIndicator();
     }
 
     private void RegenIndicator()
     {
-
+        foreach(Node child in IndicatorContainer.GetChildren())
+        {
+            IndicatorContainer.RemoveChild(child);
+        }
+        foreach(Node planet in PlanetContainer.GetChildren())
+        {
+            SpacePlanet p = planet as SpacePlanet;
+            if(p != null && _gameManager.CanLandOnPlanet(p.PlanetId))
+            {
+                var indicatorComponent = IndicatorPrefabs.Instantiate() as Indicator;
+                indicatorComponent.rocket = this;
+                indicatorComponent.planet = p;
+                IndicatorContainer.AddChild(indicatorComponent);
+            }
+        }
     }
 
     public override void _PhysicsProcess(double delta)
